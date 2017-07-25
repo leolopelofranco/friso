@@ -26,6 +26,16 @@ Friso.config(["$stateProvider", "$httpProvider", "$urlRouterProvider", "$locatio
       }
     })
 
+    .state('nav.connect', {
+      url: '/connect',
+      views: {
+        'content@nav': {
+          templateUrl: 'main/connect.html',
+          controller: 'ConnectController'
+        }
+      }
+    })
+
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({

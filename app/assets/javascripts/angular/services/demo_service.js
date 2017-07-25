@@ -71,4 +71,272 @@ angular.module('Friso.services')
   ];
     }
 
+    this.docs = function() {
+      return [
+        {
+          "mac": "10-FE-ED-A8-11-38",
+          "name": "marc_collao",
+          "header": "marc_collao_header",
+          "wds": "0"
+        },
+        {
+          "mac": "10-FE-ED-BF-BA-00",
+          "name": "jenny_pablo",
+          "header": "jenny_pablo_header",
+          "wds": "4"
+        },
+        {
+          "mac": "10-FE-ED-C0-35-66",
+          "name": "sandee_agustin",
+          "header": "sandee_agustin_header",
+          "wds": "2"
+        },
+        {
+          "mac": "10-FE-ED-BF-B9-BE",
+          "name": "edna_trinidad",
+          "header": "edna_trinidad_header",
+          "wds": "5"
+        },
+        {
+          "mac": "10-FE-ED-C0-50-A2",
+          "name": "amelen_palanca",
+          "header": "amelen_palanca_header",
+          "wds": "9"
+        },
+        {
+          "mac": "10-FE-ED-BF-E9-D2",
+          "name": "aileen_ong",
+          "header": "aileen_ong_header",
+          "wds": "1"
+        },
+        {
+          "mac": "10-FE-ED-BF-BA-3C",
+          "name": "elena_sayo",
+          "header": "elena_sayo_header",
+          "wds": "3"
+        },
+        {
+          "mac": "10-FE-ED-A8-11-B0",
+          "name": "yvonne_yap",
+          "header": "yvonne_yap_header",
+          "wds": "10"
+        },
+        {
+          "mac": "10-FE-ED-C0-31-46",
+          "name": "jaimie_badillo",
+          "header": "jaimie_badillo_header",
+          "wds": "6"
+        },
+        {
+          "mac": "10-FE-ED-C0-36-B6",
+          "name": "mary_joan_cruz",
+          "header": "mary_joan_cruz_header",
+          "wds": "7"
+        },
+        {
+          "mac": "10-FE-ED-BF-BA-34",
+          "name": "minerva_mallillin",
+          "header": "minerva_mallillin_header",
+          "wds": "8"
+        },
+       	{
+          "mac": "10-FE-ED-BF-E9-94",
+          "name": "jaimee_llorin_gan",
+          "header": "jaimee_llorin_gan_header",
+          "wds": "11"
+        },
+        {
+          "mac": "10-FE-ED-C0-2F-04",
+          "name": "ma_lourdes_escobar",
+          "header": "ma_lourders_escobar_header",
+          "wds": "16"
+        },
+        {
+          "mac": "10-FE-ED-BF-E9-A8",
+          "name": "esther_averia",
+          "header": "esther_averia_header",
+          "wds": "13"
+        },
+        {
+          "mac": "10-FE-ED-C0-4F-F8",
+          "name": "pamela_gan_pe",
+          "header": "pamela_gan_pe_header",
+          "wds": "14"
+        },
+       	{
+          "mac": "10-FE-ED-C0-36-D8",
+          "name": "ma_rosario_marin",
+          "header": "ma_rosario_marin_header",
+          "wds": "15"
+        },
+   		{
+          "mac": "E8-DE-27-8C-D3-CE",
+          "name": "froilan_uy",
+          "header": "froilan_uy_header",
+          "wds": "16"
+        },
+        {
+          "mac": "10-FE-ED-A8-0F-82",
+          "name": "rosemarie_lim",
+          "header": "rosemarie_lim_header",
+          "wds": "17"
+        },
+        {
+          "mac": "10-FE-ED-C0-4F-60",
+          "name": "yolanda_lim",
+          "header": "yolanda_lim_header",
+          "wds": "18"
+        },
+        {
+          "mac": "10-FE-ED-BF-E9-C4",
+          "name": "argyll_arcigal",
+          "header": "argyll_arcigal_header",
+          "wds": "19"
+        },
+        {
+          "mac": "10-FE-ED-BF-E9-D8",
+          "name": "helen_de_villa",
+          "header": "helen_de_villa_header",
+          "wds": "20",
+        },
+        {
+          "mac": "E8-DE-27-8D-0B-DA",
+          "name": "charina_de_jesus",
+          "header": "charina_de_jesus_header",
+          "wds": "21"
+        },
+        {
+          "mac": "10-FE-ED-BF-BA-50",
+          "name": "margarette_perez",
+          "header": "margarette_perez_header",
+          "wds": "22"
+        },
+        {
+          "mac": "10-FE-ED-BF-E9-A4",
+          "name": "sharon_ann_gorosin",
+          "header": "sharon_ann_gorosin_header",
+          "wds": "23"
+        },
+        {
+          "mac": "10-FE-ED-BF-BA-22",
+          "name": "belinda_palma",
+          "header": "belinda_palma_header",
+          "wds": "24"
+        },
+        {
+          "mac": "10-FE-ED-BF-B9-B0",
+          "name": "julie_davide",
+          "header": "julie_davide_header"
+        },
+    	{
+          "mac": "E8-94-F6-A5-08-1A",
+          "name": "carmen_zaballero",
+          "header": "carmen_zaballero_header",
+          "wds": "27"
+        },
+        {
+          "mac": "A8-15-4D-E9-5A-E0",
+          "name": "julie_bruel",
+          "header": "julie_bruel_header",
+          "wds": "28"
+        },
+        {
+          "mac": "A4-2B-B0-A2-63-F2",
+          "name": "eliza_fetiza",
+          "header": "eliza_fetiza_header",
+          "wds": "29"
+        },
+        {
+          "mac": "E8-94-F6-A5-04-92",
+          "name": "mita_brown",
+          "header": "mita_brown_header",
+          "wds": "30"
+        },
+        {
+          "mac": "E8-94-F6-A5-06-42",
+          "name": "habacon",
+          "header": "habacon_header",
+          "wds": "31"
+        },
+        {
+          "mac": "E8-94-F6-A5-02-AA",
+          "name": "mildred_del_castillo",
+          "header": "mildred_del_castillo_header",
+          "wds": "35"
+        },
+        {
+          "mac": "E8-94-F6-A5-08-70",
+          "name": "ferdinand_pinangat",
+          "header": "ferdinand_pinangat_header",
+          "wds": "36"
+        },
+        {
+          "mac": "E8-94-F6-A5-04-CC",
+          "name": "benilda_manaois",
+          "header": "benilda_manaois_header",
+          "wds": "37"
+        },
+        {
+          "mac": "E8-94-F6-A5-07-BC",
+          "name": "rosario_fider",
+          "header": "rosario_fider_header",
+          "wds": "38"
+        },
+        {
+          "mac": "E8-94-F6-A5-08-48",
+          "name": "sunny_duran",
+          "header": "sunny_duran_header",
+          "wds": "39"
+        },
+        {
+          "mac": "E8-94-F6-A5-05-4C",
+          "name": "alice_salvador",
+          "header": "alice_salvador_header",
+          "wds": "40"
+      	},
+    	{
+          "mac": "E8-94-F6-A5-06-A8",
+          "name": "baby_corrine_rodis",
+          "header": "baby_corrine_rodis_header",
+          "wds": "41"
+        },
+    	{
+          "mac": "E8-94-F6-A5-04-D4",
+          "name": "fatima_acojido",
+          "header": "fatima_acojido_header",
+          "wds": "42"
+        },
+    	{
+          "mac": "E8-94-F6-A5-05-EA",
+          "name": "hershey_antonio",
+          "header": "hershey_antonio_header",
+          "wds": "43"
+        },
+    	{
+          "mac": "E8-94-F6-A5-07-DE",
+          "name": "jocelyn_josefina",
+          "header": "jocelyn_josefina_header",
+          "wds": "44"
+        },
+    	{
+          "mac": "E8-94-F6-A5-08-42",
+          "name": "sheryl_barcenas",
+          "header": "sheryl_barcenas_header",
+          "wds": "45"
+        },
+    	{
+          "mac": "E8-94-F6-A5-04-52",
+          "name": "ma_lyn_benito",
+          "header": "ma_lyn_benito_header",
+          "wds": "46"
+        },
+   		{
+          "mac": "E8-94-F6-A5-02-DE",
+          "name": "nenita_teh",
+          "header": "nenita_teh_header",
+          "wds": "47"
+        }
+      ]
+    }
+
 }]);

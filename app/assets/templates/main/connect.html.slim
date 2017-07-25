@@ -1,0 +1,32 @@
+.container
+  .chart_card.row-space-top-5
+    .head.center 
+      h4 Project Connect Users({{users.length}})
+    .chart_content 
+      .table-responsive.table_margin
+        table.table.table-striped.table-hover
+          thead
+            tr
+              th Date Last Active
+              th Name
+              th Email
+              th Gender
+              th Age Range
+              th Device
+              th Router
+          tr.pointer-cursor.search-table ng-repeat="i in users"
+            td
+              | {{i.date}}
+            td
+              a target="_blank" href="http://facebook.com/{{i.social_id}}"
+                | {{i.customer}}
+            td
+              | {{i.email}}
+            td
+              | {{i.gender}}
+            td
+              | {{i.social_age_range}}
+            td
+              | {{i.device}}
+            td
+              | {{i.router}}
