@@ -1,0 +1,1 @@
+angular.module('Friso.controllers', []);

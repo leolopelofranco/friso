@@ -1,0 +1,109 @@
+.container-aircast
+  .chart_card
+    .head
+      h5 DASHBOARD STATUS
+      .pull-right
+        h5 SETTINGS
+    .chart_content
+      nvd3.with-3d-shadow.with-transitions options="options_1" data="data"  
+  .row
+    .col-md-6
+      .chart_card
+      .head
+        h5 TOP ADVOCATES
+          h5 SETTINGS
+      .chart_content 
+        .table-responsive.table_margin
+          table.table.table-striped.table-hover
+            thead
+              tr
+                th Name
+                th Last Active
+                th Most Recent Engagement
+                th Total Engagements
+            tr.pointer-cursor.search-table ng-repeat="i in data"
+              td
+                | {{i.id}}
+              td
+                | {{i.first_name}}
+              td
+                | {{i.last_name}}
+              td
+                | {{i.email}}
+    .col-md-6
+      .chart_card
+        .head
+          h5 TOP INFLUENCERS
+          .pull-right
+            h5 SETTINGS
+        .chart_content 
+          .table-responsive.table_margin
+            table.table.table-striped.table-hover
+              thead
+                tr
+                  th Name
+                  th Datetime Last Engagement
+                  th Total Likes
+                  th Total Replies
+                  th Total Influence
+              tr.pointer-cursor.search-table ng-repeat="i in data"
+                td
+                  | {{i.id}}
+                td
+                  | {{i.first_name}}
+                td
+                  | {{i.last_name}}
+                td
+                  | {{i.email}}        
+  .row
+    .col-md-6
+      .chart_card
+      .head
+        h5 PROJECT CONNECT: User Logins
+        .pull-right
+          h5 SETTINGS
+      .chart_content 
+        .table-responsive.table_margin
+          table.table.table-striped.table-hover
+            thead
+              tr
+                th Name
+                th Email Address
+                th Last Logged In
+                th Router where user logged in
+                th Gender
+                th Age Range
+            tr.pointer-cursor.search-table ng-repeat="i in data"
+              td
+                | {{i.id}}
+              td
+                | {{i.first_name}}
+              td
+                | {{i.last_name}}
+              td
+                | {{i.email}}
+    .col-md-6
+      .chart_card
+        .head
+          h5 TOP INFLUENCERS
+          .pull-right
+            h5 SETTINGS
+        .chart_content 
+          .table-responsive.table_margin
+            table.table.table-striped.table-hover
+              thead
+                tr
+                  th Name
+                  th Datetime Last Engagement
+                  th Total Likes
+                  th Total Replies
+                  th Total Influence
+              tr.pointer-cursor.search-table ng-repeat="i in data"
+                td
+                  | {{i.id}}
+                td
+                  | {{i.first_name}}
+                td
+                  | {{i.last_name}}
+                td
+                  | {{i.email}}
