@@ -59,6 +59,89 @@ angular.module('Friso.services')
         }
       };
     }
+
+    this.total_engagements_options = function() {
+      return  {
+        chart: {
+            type: 'discreteBarChart',
+            height: 450,
+            x: function(d){return d.month;},
+            y: function(d){return d.value;},
+            showValues: true,
+            valueFormat: function(d){
+                return d3.format(',.2f')(d);
+            },
+            transitionDuration: 500,
+            xAxis: {
+                axisLabel: 'Month',
+                rotateLabels: -20
+            },
+            yAxis: {
+                axisLabel: 'Revenue',
+                axisLabelDistance: 30
+            }
+        }
+      }
+    }
+
+    this.total_engagements_data = function() {
+      return [
+            {
+                values: [
+                    {
+                        "label" : "Jan" ,
+                        "value" : 29.765957771107
+                    } ,
+                    {
+                        "label" : "Feb" ,
+                        "value" : 20
+                    } ,
+                    {
+                        "label" : "Mar" ,
+                        "value" : 32.807804682612
+                    } ,
+                    {
+                        "label" : "Apr" ,
+                        "value" : 96.45946739256
+                    } ,
+                    {
+                        "label" : "May" ,
+                        "value" : 130.19434030906893
+                    } ,
+                    {
+                        "label" : "Jun" ,
+                        "value" : 198.079782601442
+                    } ,
+                    {
+                        "label" : "Jul" ,
+                        "value" : 150.925743130903
+                    } ,
+                    {
+                        "label" : "Aug" ,
+                        "value" : 50.1387322875705
+                    },
+                    {
+                        "label" : "Sep" ,
+                        "value" : 98.079782601442
+                    } ,
+                    {
+                        "label" : "Oct" ,
+                        "value" : 13.925743130903
+                    } ,
+                    {
+                        "label" : "Nov" ,
+                        "value" : 5.1387322875705
+                    },
+                    {
+                        "label" : "Dec" ,
+                        "value" : 5.1387322875705
+                    }
+                ]
+            }
+        ]
+    }
+
+
     this.demo_data = function() {
       return [
       {
@@ -335,6 +418,12 @@ angular.module('Friso.services')
           "name": "nenita_teh",
           "header": "nenita_teh_header",
           "wds": "47"
+        }
+        ,
+   		{
+          "mac": "10-FE-ED-C0-2E-7E",
+          "name": "Gan Montenegro",
+          "wds": "26"
         }
       ]
     }

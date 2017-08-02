@@ -10,13 +10,16 @@ nav.navbar
         = image_tag 'friso.png'
     #myNavbar.collapse.navbar-collapse
       ul.nav.navbar-nav
+        / li
+        /   a ui-sref="nav.home" ng-class="{active: $state.includes('nav.home')}"
+        /     | HOME    
         li
-          a ui-sref="nav.home" ng-class="{active: $state.includes('nav.connect')}"
-            | HOME
-      ul.nav.navbar-nav.navbar-right  
-        li
-          a ui-sref="nav.signout" ng-class="{active: $state.includes('nav.signout')}"
-            | SIGNOUT
+          a ui-sref="nav.connect" ng-class="{active: $state.includes('nav.connect')}"
+            | PROJECT CONNECT
+      / ul.nav.navbar-nav.navbar-right  
+      /   li
+      /     a ui-sref="nav.signout" ng-class="{active: $state.includes('nav.signout')}"
+      /       | SIGNOUT
 .height-75
 
 .home

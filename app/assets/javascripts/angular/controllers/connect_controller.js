@@ -3,8 +3,48 @@ angular.module('Friso.controllers')
   ['$scope', '$state', 'DemoService', 'DataService',
     function($scope, $state, DemoService, DataService) {
 
+      $scope.filter_keys = [
+        {
+          name: "All",
+          key: "all"
+        },
+        {
+          name: "Active Routers",
+          key: "router"
+        }, {
+          name: "Unique People",
+          key: "customer"
+        }, {
+          name: "Remove",
+          key: "remove"
+        }
+      ]
+
+      $scope.filters = function(filter) {
+        if(filter == 'all') {
+          $scope.users = users_original
+        }
+        else if (filter == 'remove') {
+          users = []
+          console.log($scope.users)
+          names = ['Leo Lope Lofranco', 'Ferer Atlus', 'Randy Beros', 'Qweasd Namanan', 'Jessmond Diesta Nazarrea', 'Margie Marquez Pena', 'Patsy Bot']
+          _.each($scope.users, function(x) {
+            if(!_.includes(names,x.customer)) {
+              users.push(x)
+            }
+          })
+
+          $scope.users = users
+          console.log('hello')
+        }
+        else {
+          $scope.users = _.uniqBy($scope.users_original, filter);
+        }
+      }
+
       DataService.connect_users()
         .then(function(d){
+          console.log(d)
           _.each(d.data.items, function(x) {
             x.date = moment(x.action_date_gmt).format('llll')
             if(x.social_gender == 1) {
@@ -41,9 +81,12 @@ angular.module('Friso.controllers')
             }
 
           })
+          users_original = d.data.items.reverse()
 
           $scope.users = d.data.items.reverse()
-          console.log($scope.users)
+
+          $scope.users_original = d.data.items
+
         });
 
 

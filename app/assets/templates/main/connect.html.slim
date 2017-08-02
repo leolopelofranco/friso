@@ -2,7 +2,10 @@
   .chart_card.row-space-top-5
     .head.center 
       h4 Project Connect Users({{users.length}})
-    .chart_content 
+    .chart_content
+      .filters
+        a href="#" ng-repeat="filter_key in filter_keys" ng-click="filters(filter_key.key)"
+          | {{filter_key.name}} | 
       .table-responsive.table_margin
         table.table.table-striped.table-hover
           thead
