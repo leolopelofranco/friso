@@ -1,0 +1,33 @@
+.modal-container.row-space-top-4
+  i.line-icon.orange.analytics-icon
+    | &#xe34a;
+  button.btn-animate ng-click="openSingle()" ng-class="{'active': single}" Single Variable Analysis
+  button.btn-animate ng-click="openDouble()" ng-class="{'active': !single}" Double Variable Analysis
+
+  .row-space-top-3 ng-show="single"
+    .form-group
+      span.label-var Variable
+      .rect
+        select.form-control.remove-border ng-init="page=pages[0]" ng-model="page" ng-options="page.name for page in pages"
+    span.label-var.pages Pages
+    select multiple="" ng-model="myData" ng-options="value as label for (value, label) in data" chosen=""
+
+  .row-space-top-3 ng-show="!single"
+    .form-group
+      span.label-var Variable A
+      .rect
+        select.form-control.remove-border ng-init="analytic=analytics[0]" ng-model="analytic_1" ng-options="analytic.name for analytic in analytics"
+    .form-group
+      span.label-var Variable B
+      .rect
+        select.form-control.remove-border ng-init="analytic=analytics[0]" ng-model="analytic_2" ng-options="analytic.name for analytic in analytics"
+    h4.line
+      span on
+    span.label-var.pages Pages
+    select multiple="" ng-model="myData" ng-options="value as label for (value, label) in data" chosen=""
+
+
+  hr.row-space-1
+
+  button.btn-animate.btn-padding.red-btn.add-margin-right ng-click="closeModal()" Cancel
+  button.btn-animate.btn-padding.green-btn ng-click="addGraph()" Add Graph

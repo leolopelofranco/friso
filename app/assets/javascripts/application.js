@@ -19,6 +19,7 @@
 //= require d3.min
 //= require nv.d3.min
 //= require angular-nvd3.min
+//= require ngDialog.min
 //= require_tree ../templates
 
 //= require_tree .

@@ -69,7 +69,7 @@ angular.module('Friso.services')
             y: function(d){return d.value;},
             showValues: true,
             valueFormat: function(d){
-                return d3.format(',.2f')(d);
+                return d3.format('d')(d);
             },
             transitionDuration: 500,
             xAxis: {

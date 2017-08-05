@@ -6,26 +6,31 @@
     /     h5 SETTINGS
     / .chart_content
     /   nvd3.with-3d-shadow.with-transitions options="options_1" data="data"
-  .chart_card
-    .head
-      h5 Total Engagements
-      .pull-right
-        h5 SETTINGS
-    .chart_content
-      nvd3.with-3d-shadow.with-transitions options="discrete_label" data="total_engagement_data"  
-  .chart_card
-    .head
-      h5 Total Unique Users
-      .pull-right
-        h5 SETTINGS
-    .chart_content
-      nvd3.with-3d-shadow.with-transitions options="discrete_label" data="total_unique_data"
-  
+  .row
+    .col-md-6
+      .chart_card
+        .head
+          h5 Total Engagements
+          .pull-right
+            select ng-change="page_engagements(page_total_engagements, 'total_engagement')" ng-init="page_total_engagements=pages[0]" ng-model="page_total_engagements" ng-options="page.name for page in pages"
+        .chart_content
+          nvd3.with-3d-shadow.with-transitions options="discrete_label" data="total_engagement_data"  
+    .col-md-6
+      .chart_card
+        .head
+          h5 Total Unique Users
+          .pull-right
+            select ng-change="page_engagements(page_unique_users, 'unique_users')" ng-init="page_unique_users=pages[0]" ng-model="page_unique_users" ng-options="page.name for page in pages"
+        .chart_content
+          nvd3.3with-3d-shadow.with-transitions options="discrete_label" data="total_unique_data"
+      
   .row
     .col-md-6
       .chart_card
         .head
           h5 TOP ADVOCATES
+          .pull-right
+            select ng-change="page_engagements(page_advocates, 'top_engagement')" ng-init="page_advocates=pages[0]" ng-model="page_advocates" ng-options="page.name for page in pages"
         .chart_content 
           .table-responsive.table_margin
             table.table.table-striped.table-hover
@@ -44,7 +49,7 @@
         .head
           h5 TOP INFLUENCERS
           .pull-right
-            h5 SETTINGS
+            select ng-change="page_engagements(page_influencers, 'top_influencer')" ng-init="page_influencers=pages[0]" ng-model="page_influencers" ng-options="page.name for page in pages"
         .chart_content 
           .table-responsive.table_margin
             table.table.table-striped.table-hover
@@ -67,36 +72,10 @@
   .row
     .col-md-6
       .chart_card
-      .head
-        h5 PROJECT CONNECT: User Logins
-        .pull-right
-          h5 SETTINGS
-      .chart_content 
-        .table-responsive.table_margin
-          table.table.table-striped.table-hover
-            thead
-              tr
-                th Name
-                th Email Address
-                th Last Logged In
-                th Router where user logged in
-                th Gender
-                th Age Range
-            tr.pointer-cursor.search-table ng-repeat="i in data"
-              td
-                | {{i.id}}
-              td
-                | {{i.first_name}}
-              td
-                | {{i.last_name}}
-              td
-                | {{i.email}}
-    .col-md-6
-      .chart_card
         .head
           h5 TOP POSTS
           .pull-right
-            h5 SETTINGS
+            select ng-change="page_engagements(page_posts, 'top_posts')" ng-init="page_posts=pages[0]" ng-model="page_posts" ng-options="page.name for page in pages"
         .chart_content 
           .table-responsive.table_margin
             table.table.table-striped.table-hover
@@ -109,7 +88,7 @@
                   th Total Enagements
               tr.pointer-cursor.search-table ng-repeat="i in posts"
                 td
-                  img ng-src="{{i.image}}"
+                  img.post_img ng-src="{{i.image}}"
                 td
                   a target="_blank" href="{{i.post_url}}"
                     | {{i.number_of_likes}}
