@@ -65,19 +65,24 @@ angular.module('Friso.controllers')
 
             x.link = 'www.facebook.com/' + x.social_id
             wrt = x.user_name
-
+            console.log(wrt)
             wrt = wrt.substr(wrt.length - 6);
-            wrt_digit = wrt.match(/\d+$/)[0];
+            console.log(wrt)
+            wrt_digit = wrt.match(/\d+$/)
+            
             if(wrt_digit) {
-              doctors = DemoService.docs()
-              _.each(doctors, function(doc) {
-                if(doc.wds == wrt_digit) {
-                  x.router = doc.name
-                }
-              })
-            }
-            else {
-              router = 'Marc_Collao'
+              wrt_digit = wrt.match(/\d+$/)[0];
+              if(wrt_digit) {
+                doctors = DemoService.docs()
+                _.each(doctors, function(doc) {
+                  if(doc.wds == wrt_digit) {
+                    x.router = doc.name
+                  }
+                })
+              }
+              else {
+                router = 'Marc_Collao'
+              }
             }
 
           })
