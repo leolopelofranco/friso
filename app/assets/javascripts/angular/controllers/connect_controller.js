@@ -94,10 +94,11 @@ angular.module('Friso.controllers')
 
         });
 
-
-
-
-
-
-
+        $scope.exportTable = function(event){
+          var table = angular.element("#table_export");
+          console.log(table);
+          table.tableExport({type:'csv',escape:'false'});
+        }
+        
+        
 }]);
