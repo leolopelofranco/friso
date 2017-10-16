@@ -46,7 +46,7 @@ angular.module('Friso.controllers')
         .then(function(d){
           console.log(d)
           _.each(d.data.items, function(x) {
-            x.date = moment(x.action_date_gmt).format('llll')
+            x.date = moment(x.action_date_gmt).format('lll')
             if(x.social_gender == 1) {
               x.gender = 'Male'
             }
@@ -69,7 +69,7 @@ angular.module('Friso.controllers')
             wrt = wrt.substr(wrt.length - 6);
             console.log(wrt)
             wrt_digit = wrt.match(/\d+$/)
-            
+
             if(wrt_digit) {
               wrt_digit = wrt.match(/\d+$/)[0];
               if(wrt_digit) {
@@ -99,6 +99,6 @@ angular.module('Friso.controllers')
           console.log(table);
           table.tableExport({type:'csv',escape:'false'});
         }
-        
-        
+
+
 }]);
