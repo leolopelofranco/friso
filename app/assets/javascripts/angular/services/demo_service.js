@@ -51,7 +51,7 @@ angular.module('Friso.services')
         },
         caption: {
             enable: false,
-            html: '<b>Figure 1.</b> By April 2016 Cloudfones page likes were at <span style="text-decoration: underline;">607,150 and ended at 701,099 </span> by the end of April 2017. Between that timeframe page likes are at increasing steady rate but the most significant increase was between <b> January 11 to January 16,</b>where total page likes jumped from <b>666,623 to 694,674</b>\n',
+            html: '<b>Figure 1.</b> By April 2016 Cloudfones  page likes were at <span style="text-decoration: underline;">607,150 and ended at 701,099 </span> by the end of April 2017. Between that timeframe page likes are at increasing steady rate but the most significant increase was between <b> January 11 to January 16,</b>where total page likes jumped from <b>666,623 to 694,674</b>\n',
             css: {
                 'text-align': 'justify',
                 'margin': '10px 13px 0px 7px'
@@ -154,7 +154,7 @@ angular.module('Friso.services')
   ];
     }
 
-    this.docs = function() {
+      this.docs = function() {
       return [
         {
           "mac": "10-FE-ED-A8-11-38",
@@ -163,34 +163,16 @@ angular.module('Friso.services')
           "wds": "0"
         },
         {
-          "mac": "10-FE-ED-BF-BA-00",
-          "name": "jenny_pablo",
-          "header": "jenny_pablo_header",
-          "wds": "4"
-        },
-        {
-          "mac": "10-FE-ED-C0-35-66",
-          "name": "sandee_agustin",
-          "header": "sandee_agustin_header",
-          "wds": "2"
-        },
-        {
-          "mac": "10-FE-ED-BF-B9-BE",
-          "name": "edna_trinidad",
-          "header": "edna_trinidad_header",
-          "wds": "5"
-        },
-        {
-          "mac": "10-FE-ED-C0-50-A2",
-          "name": "amelen_palanca",
-          "header": "amelen_palanca_header",
-          "wds": "9"
-        },
-        {
           "mac": "10-FE-ED-BF-E9-D2",
           "name": "aileen_ong",
           "header": "aileen_ong_header",
           "wds": "1"
+        },
+        {
+          "mac": "10-FE-ED-C0-35-66",
+          "name": "janet_reymundo",
+          "header": "janet_reymundo_header",
+          "wds": "2"
         },
         {
           "mac": "10-FE-ED-BF-BA-3C",
@@ -199,15 +181,21 @@ angular.module('Friso.services')
           "wds": "3"
         },
         {
-          "mac": "10-FE-ED-A8-11-B0",
-          "name": "yvonne_yap",
-          "header": "yvonne_yap_header",
-          "wds": "10"
+          "mac": "10-FE-ED-BF-BA-00",
+          "name": "jenny_pablo",
+          "header": "jenny_pablo_header",
+          "wds": "4"
+        },
+        {
+          "mac": "10-FE-ED-BF-B9-BE",
+          "name": "edna_trinidad",
+          "header": "edna_trinidad_header",
+          "wds": "5"
         },
         {
           "mac": "10-FE-ED-C0-31-46",
-          "name": "jaimie_badillo",
-          "header": "jaimie_badillo_header",
+          "name": "jeanny_velilia",
+          "header": "jeanny_velilia_header",
           "wds": "6"
         },
         {
@@ -222,7 +210,19 @@ angular.module('Friso.services')
           "header": "minerva_mallillin_header",
           "wds": "8"
         },
-       	{
+        {
+          "mac": "10-FE-ED-C0-50-A2",
+          "name": "amelen_palanca",
+          "header": "amelen_palanca_header",
+          "wds": "9"
+        },
+        {
+          "mac": "10-FE-ED-BF-E9-94",
+          "name": "yvonne_yap",
+          "header": "yvonne_yap_header",
+          "wds": "10"
+        },
+        {
           "mac": "10-FE-ED-BF-E9-94",
           "name": "jaimee_llorin_gan",
           "header": "jaimee_llorin_gan_header",
@@ -230,44 +230,44 @@ angular.module('Friso.services')
         },
         {
           "mac": "10-FE-ED-C0-2F-04",
-          "name": "ma_lourdes_escobar",
-          "header": "ma_lourders_escobar_header",
-          "wds": "16"
+          "name": "ray_marco_alivio",
+          "header": "ray_marco_alivio_header",
+          "wds": "12"
         },
         {
           "mac": "10-FE-ED-BF-E9-A8",
-          "name": "esther_averia",
-          "header": "esther_averia_header",
+          "name": "edna_uy",
+          "header": "edna_uy_header",
           "wds": "13"
         },
         {
           "mac": "10-FE-ED-C0-4F-F8",
-          "name": "pamela_gan_pe",
-          "header": "pamela_gan_pe_header",
+          "name": "lilibeth_genuino",
+          "header": "lilibeth_genuino_header",
           "wds": "14"
         },
-       	{
+        {
           "mac": "10-FE-ED-C0-36-D8",
           "name": "ma_rosario_marin",
           "header": "ma_rosario_marin_header",
           "wds": "15"
         },
-   		{
+        {
           "mac": "E8-DE-27-8C-D3-CE",
-          "name": "froilan_uy",
-          "header": "froilan_uy_header",
+          "name": "sharon_ann",
+          "header": "sharon_ann_header",
           "wds": "16"
         },
         {
           "mac": "10-FE-ED-A8-0F-82",
-          "name": "rosemarie_lim",
-          "header": "rosemarie_lim_header",
+          "name": "karen_quan",
+          "header": "karen_quan_header",
           "wds": "17"
         },
         {
           "mac": "10-FE-ED-C0-4F-60",
-          "name": "yolanda_lim",
-          "header": "yolanda_lim_header",
+          "name": "edna_dollete",
+          "header": "edna_dollete_header",
           "wds": "18"
         },
         {
@@ -296,8 +296,8 @@ angular.module('Friso.services')
         },
         {
           "mac": "10-FE-ED-BF-E9-A4",
-          "name": "sharon_ann_gorosin",
-          "header": "sharon_ann_gorosin_header",
+          "name": "annabella_sevilla",
+          "header": "annabella_sevilla_header",
           "wds": "23"
         },
         {
@@ -308,13 +308,14 @@ angular.module('Friso.services')
         },
         {
           "mac": "10-FE-ED-BF-B9-B0",
-          "name": "julie_davide",
-          "header": "julie_davide_header"
+          "name": "jamaica_ortiz",
+          "header": "jamaica_ortiz_header",
+          "wds": "25"
         },
-    	{
+        {
           "mac": "E8-94-F6-A5-08-1A",
-          "name": "carmen_zaballero",
-          "header": "carmen_zaballero_header",
+          "name": "olga_etorma",
+          "header": "olga_etorma_header",
           "wds": "27"
         },
         {
@@ -331,38 +332,50 @@ angular.module('Friso.services')
         },
         {
           "mac": "E8-94-F6-A5-04-92",
-          "name": "mita_brown",
-          "header": "mita_brown_header",
+          "name": "daisy_tee",
+          "header": "daisy_tee_header",
           "wds": "30"
         },
         {
           "mac": "E8-94-F6-A5-06-42",
-          "name": "habacon",
-          "header": "habacon_header",
+          "name": "ma_lourdes_simeon",
+          "header": "ma_lourdes_simeon_header",
           "wds": "31"
         },
         {
+          "mac": "E8-94-F6-A5-04-BC",
+          "name": "efren_balanag",
+          "header": "efren_balanag_header",
+          "wds": "33"
+        },
+        {
+          "mac": "E8-94-F6-A5-05-B2",
+          "name": "melissa_macatangay",
+          "header": "melissa_macatangay_header",
+          "wds" : "34"
+        },
+        {
           "mac": "E8-94-F6-A5-02-AA",
-          "name": "mildred_del_castillo",
-          "header": "mildred_del_castillo_header",
+          "name": "rene_salvador",
+          "header": "rene_salvador_header",
           "wds": "35"
         },
         {
           "mac": "E8-94-F6-A5-08-70",
-          "name": "ferdinand_pinangat",
-          "header": "ferdinand_pinangat_header",
+          "name": "vivienne_guzman_kasaju",
+          "header": "vivienne_guzman_kasaju_header",
           "wds": "36"
         },
         {
           "mac": "E8-94-F6-A5-04-CC",
-          "name": "benilda_manaois",
-          "header": "benilda_manaois_header",
+          "name": "carmel_linsangan",
+          "header": "carmel_linsangan_header",
           "wds": "37"
         },
         {
           "mac": "E8-94-F6-A5-07-BC",
-          "name": "rosario_fider",
-          "header": "rosario_fider_header",
+          "name": "wilda_binua",
+          "header": "wilda_binua_header",
           "wds": "38"
         },
         {
@@ -376,54 +389,48 @@ angular.module('Friso.services')
           "name": "alice_salvador",
           "header": "alice_salvador_header",
           "wds": "40"
-      	},
-    	{
+        },
+        {
           "mac": "E8-94-F6-A5-06-A8",
-          "name": "baby_corrine_rodis",
-          "header": "baby_corrine_rodis_header",
+          "name": "mary_grace_san_luis",
+          "header": "mary_grace_header",
           "wds": "41"
         },
-    	{
+        {
           "mac": "E8-94-F6-A5-04-D4",
           "name": "fatima_acojido",
           "header": "fatima_acojido_header",
           "wds": "42"
         },
-    	{
+        {
           "mac": "E8-94-F6-A5-05-EA",
           "name": "hershey_antonio",
           "header": "hershey_antonio_header",
           "wds": "43"
         },
-    	{
+        {
           "mac": "E8-94-F6-A5-07-DE",
-          "name": "jocelyn_josefina",
-          "header": "jocelyn_josefina_header",
+          "name": "sandee_agustin",
+          "header": "sandee_agustin_header",
           "wds": "44"
         },
-    	{
+        {
           "mac": "E8-94-F6-A5-08-42",
           "name": "sheryl_barcenas",
           "header": "sheryl_barcenas_header",
           "wds": "45"
         },
-    	{
+        {
           "mac": "E8-94-F6-A5-04-52",
           "name": "ma_lyn_benito",
           "header": "ma_lyn_benito_header",
           "wds": "46"
         },
-   		{
+        {
           "mac": "E8-94-F6-A5-02-DE",
           "name": "nenita_teh",
           "header": "nenita_teh_header",
           "wds": "47"
-        }
-        ,
-   		{
-          "mac": "10-FE-ED-C0-2E-7E",
-          "name": "Gan Montenegro",
-          "wds": "26"
         }
       ]
     }

@@ -2,12 +2,16 @@
   .chart_card.row-space-top-5
     .head.center 
       h4 Project Connect Users({{users.length}})
+      .dropdown
+        button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"
+          | Export Table 
+          i.fa.fa-download 
     .chart_content
       .filters
         a href="#" ng-repeat="filter_key in filter_keys" ng-click="filters(filter_key.key)"
           | {{filter_key.name}} | 
       .table-responsive.table_margin
-        table.table.table-striped.table-hover
+        table.table.table-striped.table-hover#table_export
           thead
             tr
               th Date Last Active
