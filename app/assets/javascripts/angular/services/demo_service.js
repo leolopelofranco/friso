@@ -154,18 +154,18 @@ angular.module('Friso.services')
   ];
     }
 
-      this.docs = function() {
+    this.docs = function() {
       return [
         {
           "mac": "10-FE-ED-A8-11-38",
-          "name": "marc_collao",
-          "header": "marc_collao_header",
+          "name": "rosario_marin",
+          "header": "rosario_marin_header",
           "wds": "0"
         },
         {
           "mac": "10-FE-ED-BF-E9-D2",
-          "name": "aileen_ong",
-          "header": "aileen_ong_header",
+          "name": "paul_bansil",
+          "header": "paul_bansil",
           "wds": "1"
         },
         {
@@ -248,13 +248,13 @@ angular.module('Friso.services')
         },
         {
           "mac": "10-FE-ED-C0-36-D8",
-          "name": "ma_rosario_marin",
-          "header": "ma_rosario_marin_header",
+          "name": "edwin_cuenco",
+          "header": "edwin_cuenco_header",
           "wds": "15"
         },
         {
           "mac": "E8-DE-27-8C-D3-CE",
-          "name": "sharon_ann",
+          "name": "sharon_ann_gorosin",
           "header": "sharon_ann_header",
           "wds": "16"
         },
@@ -311,6 +311,12 @@ angular.module('Friso.services')
           "name": "jamaica_ortiz",
           "header": "jamaica_ortiz_header",
           "wds": "25"
+        },
+		{
+          "mac": "10-FE-ED-BF-B9-B0",
+          "name": "gan_monteger",
+          "header": "jamaica_ortiz_header",
+          "wds": "26"
         },
         {
           "mac": "E8-94-F6-A5-08-1A",
@@ -422,8 +428,8 @@ angular.module('Friso.services')
         },
         {
           "mac": "E8-94-F6-A5-04-52",
-          "name": "ma_lyn_benito",
-          "header": "ma_lyn_benito_header",
+          "name": "jessica_bentalan",
+          "header": "jessica_bentalan_header",
           "wds": "46"
         },
         {
@@ -431,8 +437,22 @@ angular.module('Friso.services')
           "name": "nenita_teh",
           "header": "nenita_teh_header",
           "wds": "47"
+        },
+        {
+          "mac": "E8-94-F6-A5-05-DA",
+          "name": "patricia_bustamante",
+          "header": "patricia_bustamante_header",
+          "wds": "48"
+        },
+        {
+          "mac": "E8-94-F6-A5-03-42",
+          "name": "samantha_victorio",
+          "header": "samantha_victorio_header",
+          "wds": "50"
         }
       ]
     }
+
+
 
 }]);

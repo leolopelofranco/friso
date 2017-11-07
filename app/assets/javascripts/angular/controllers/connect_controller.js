@@ -35,7 +35,7 @@ angular.module('Friso.controllers')
           })
 
           $scope.users = users
-          console.log('hello')
+
         }
         else {
           $scope.users = _.uniqBy($scope.users_original, filter);
@@ -44,7 +44,7 @@ angular.module('Friso.controllers')
 
       DataService.connect_users()
         .then(function(d){
-          console.log(d)
+
           _.each(d.data.items, function(x) {
             x.date = moment(x.action_date_gmt).format('lll')
             if(x.social_gender == 1) {
@@ -65,9 +65,9 @@ angular.module('Friso.controllers')
 
             x.link = 'www.facebook.com/' + x.social_id
             wrt = x.user_name
-            console.log(wrt)
+
             wrt = wrt.substr(wrt.length - 6);
-            console.log(wrt)
+
             wrt_digit = wrt.match(/\d+$/)
 
             if(wrt_digit) {
@@ -92,7 +92,24 @@ angular.module('Friso.controllers')
 
           $scope.users_original = d.data.items
 
+          var distances = {};
+          _.each($scope.users_original,function(i,e) {
+             distances[i.router] = (distances[i.router] || 0) + 1;
+          });
+
+          $scope.unique_routers_count = []
+          _.each(_.keys(distances), function(i) {
+            c = {}
+            c["name"] = i
+            c["sum"] = distances[i]
+            $scope.unique_routers_count.push(c)
+          })
+          console.log(distances)
+          console.log($scope.unique_routers_count)
         });
+
+
+
 
         $scope.exportTable = function(event){
           var table = angular.element("#table_export");

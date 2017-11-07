@@ -11,7 +11,7 @@
         a href="#" ng-repeat="filter_key in filter_keys" ng-click="filters(filter_key.key)"
           | {{filter_key.name}} | 
       .table-responsive.table_margin
-        table.table.table-striped.table-hover#table_export
+        table.table.table-striped.table-hover
           thead
             tr
               th Date Last Active
@@ -37,3 +37,22 @@
               | {{i.device}}
             td
               | {{i.router}}
+  .chart_card.row-space-top-5
+    .head.center 
+      h4 Unique Routers Breakdown
+      .dropdown
+        button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"
+          | Export Table 
+          i.fa.fa-download 
+    .chart_content
+      .table-responsive.table_margin
+        table.table.table-striped.table-hover#table_export
+          thead
+            tr
+              th Name
+              th Count
+          tr.pointer-cursor.search-table ng-repeat="i in unique_routers_count"
+            td
+              | {{i.name}}
+            td
+              | {{i.sum}}           
