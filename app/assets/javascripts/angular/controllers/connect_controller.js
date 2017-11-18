@@ -128,8 +128,6 @@ angular.module('Friso.controllers')
              distances[i.router] = (distances[i.router] || 0) + 1;
           });
 
-
-
           $scope.unique_routers_count = []
           _.each(_.keys(distances), function(i) {
             c = {}
@@ -139,41 +137,6 @@ angular.module('Friso.controllers')
           })
 
           $scope.unique_routers = _.uniqBy($scope.users_original, 'router');
-
-
-          // users_by_dates = []
-          // _.each(date_range, function(x) {
-          //   x = moment(x).format('MM-DD')
-          //   users_by_day = []
-          //   _.each($scope.users_original, function(i) {
-          //     if(moment(i.date).format('MM-DD') == x) {
-          //       users_by_day.push(i)
-          //     }
-          //   })
-          //
-          //   var distances = {};
-          //   _.each(users_by_day,function(i,e) {
-          //      distances[i.router] = (distances[i.router] || 0) + 1;
-          //   });
-          //
-          //   unique_routers_count_by_dates = []
-          //   _.each(_.keys(distances), function(i) {
-          //     c = {}
-          //     c["name"] = i
-          //     c["sum"] = distances[i]
-          //     unique_routers_count_by_dates.push(c)
-          //   })
-          //
-          //   d = {}
-          //   d["date"] = x
-          //   d["users"] = users_by_day
-          //   d["users_by_dates"] = unique_routers_count_by_dates
-          //
-          //   users_by_dates.push(d)
-          // })
-          //
-          // console.log(users_by_dates)
-          // })
 
           date_range = getDates($scope.datePicker.date.startDate, $scope.datePicker.date.endDate)
           $scope.unique_routers_count_by_user_date = unique_routers_by_dates_fxn(date_range)
@@ -208,28 +171,26 @@ angular.module('Friso.controllers')
             d["dates"] = dates
             unique_routers_count_by_user_date.push(d)
           })
-          return unique_routers_count_by_user_date
+        return unique_routers_count_by_user_date
+      }
+      
+      function getDates(startDate, stopDate) {
+        var dateArray = [];
+        var currentDate = moment(startDate);
+        var stopDate = moment(stopDate);
+        while (currentDate <= stopDate) {
+            dateArray.push( moment(currentDate).format('YYYY-MM-DD') )
+            currentDate = moment(currentDate).add(1, 'days');
+        }
+        return dateArray;
       }
 
 
+      $scope.exportTable = function(event){
+        var table = angular.element("#table_export");
 
-        function getDates(startDate, stopDate) {
-          var dateArray = [];
-          var currentDate = moment(startDate);
-          var stopDate = moment(stopDate);
-          while (currentDate <= stopDate) {
-              dateArray.push( moment(currentDate).format('YYYY-MM-DD') )
-              currentDate = moment(currentDate).add(1, 'days');
-          }
-          return dateArray;
-        }
-
-
-        $scope.exportTable = function(event){
-          var table = angular.element("#table_export");
-
-          table.tableExport({type:'csv',escape:'false'});
-        }
+        table.tableExport({type:'csv',escape:'false'});
+      }
 
 
 }]);
