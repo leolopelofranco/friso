@@ -27,7 +27,7 @@ angular.module('Friso.controllers')
         else if (filter == 'remove') {
           users = []
           console.log($scope.users)
-          names = ['Leo Lope Lofranco', 'Ferer Atlus', 'Randy Beros', 'Qweasd Namanan', 'Jessmond Diesta Nazarrea', 'Margie Marquez Pena', 'Patsy Bot']
+          names = ['Leo Lope Lofranco', 'Ferer Atlus', 'Randy Beros', 'Qweasd Namanan', 'Jessmond Diesta Nazarrea', 'Margie Marquez Pena', 'Patsy Bot', 'Eboy Watson', 'Bryan Conde', 'April Torrento Dondoy', 'Elin Ellarina']
           _.each($scope.users, function(x) {
             if(!_.includes(names,x.customer)) {
               users.push(x)
