@@ -47,13 +47,16 @@
           i.fa.fa-download 
     .chart_content
       .table-responsive.table_margin
-        table.table.table-striped.table-hover#table_export
+        input.search-bar type="text" ng-model="keyword" placeholder="Quick Search"
+        .sort-by
+          input date-range-picker="" class="form-control date-picker" type="text" ng-model="datePicker.date" options="dateOptions"
+        table.table.table-striped.table-hover#table_export.row-space-top-4
           thead
             tr 
               th Site Name
-              th ng-repeat="i in date_range"
+              th ng-repeat="i in date_range_formatted"
                 | {{i}}
-          tr.pointer-cursor.search-table ng-repeat="x in unique_routers_count_by_user_date"
+          tr.pointer-cursor.search-table ng-repeat="x in unique_routers_count_by_user_date  | filter : keyword"
             td
               | {{x.site}}
             td ng-repeat="g in x.dates"

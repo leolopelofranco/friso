@@ -3,6 +3,7 @@ var Friso = angular.module('Friso', [
   'templates',
   'nvd3',
   'ngDialog',
+  'daterangepicker',
   'Friso.controllers',
   'Friso.services'
 ]);

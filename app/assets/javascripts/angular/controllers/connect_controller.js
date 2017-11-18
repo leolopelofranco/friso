@@ -20,6 +20,29 @@ angular.module('Friso.controllers')
         }
       ]
 
+      $scope.dateOptions = {
+        locale : {
+            format : 'DD/MM/YYYY'
+        },
+        eventHandlers : {
+            'apply.daterangepicker' : function() {
+
+                        date_range = getDates($scope.datePicker.date.startDate, $scope.datePicker.date.endDate)
+                        $scope.unique_routers_count_by_user_date = unique_routers_by_dates_fxn(date_range)
+                        date_range_formatted = []
+                        _.each(date_range, function(i) {
+                          date_range_formatted.push(moment(i).format('MM-DD'))
+                        })
+                        $scope.date_range_formatted = date_range_formatted
+            }
+        }
+    };
+      $scope.datePicker = {}
+      $scope.datePicker.date = {
+        startDate: moment().subtract(7, "days"),
+        endDate: moment()
+      };
+
       $scope.filters = function(filter) {
         if(filter == 'all') {
           $scope.users = users_original
@@ -86,11 +109,19 @@ angular.module('Friso.controllers')
             }
 
           })
-          users_original = d.data.items.reverse()
+          users = []
 
-          $scope.users = d.data.items.reverse()
+          names = ['Leo Lope Lofranco', 'Ferer Atlus', 'Randy Beros', 'Qweasd Namanan', 'Jessmond Diesta Nazarrea', 'Margie Marquez Pena', 'Patsy Bot', 'Eboy Watson', 'Bryan Conde', 'April Torrento Dondoy', 'Elin Ellarina']
+          _.each(d.data.items.reverse(), function(x) {
+            if(!_.includes(names,x.customer)) {
+              users.push(x)
+            }
+          })
 
-          $scope.users_original = d.data.items
+          $scope.users = users
+          users_original = users
+
+          $scope.users_original = users_original
 
           var distances = {};
           _.each($scope.users_original,function(i,e) {
@@ -110,38 +141,50 @@ angular.module('Friso.controllers')
           $scope.unique_routers = _.uniqBy($scope.users_original, 'router');
 
 
-          users_by_dates = []
-          _.each(date_range, function(x) {
-            x = moment(x).format('MM-DD')
-            users_by_day = []
-            _.each($scope.users_original, function(i) {
-              if(moment(i.date).format('MM-DD') == x) {
-                users_by_day.push(i)
-              }
-            })
+          // users_by_dates = []
+          // _.each(date_range, function(x) {
+          //   x = moment(x).format('MM-DD')
+          //   users_by_day = []
+          //   _.each($scope.users_original, function(i) {
+          //     if(moment(i.date).format('MM-DD') == x) {
+          //       users_by_day.push(i)
+          //     }
+          //   })
+          //
+          //   var distances = {};
+          //   _.each(users_by_day,function(i,e) {
+          //      distances[i.router] = (distances[i.router] || 0) + 1;
+          //   });
+          //
+          //   unique_routers_count_by_dates = []
+          //   _.each(_.keys(distances), function(i) {
+          //     c = {}
+          //     c["name"] = i
+          //     c["sum"] = distances[i]
+          //     unique_routers_count_by_dates.push(c)
+          //   })
+          //
+          //   d = {}
+          //   d["date"] = x
+          //   d["users"] = users_by_day
+          //   d["users_by_dates"] = unique_routers_count_by_dates
+          //
+          //   users_by_dates.push(d)
+          // })
+          //
+          // console.log(users_by_dates)
+          // })
 
-            var distances = {};
-            _.each(users_by_day,function(i,e) {
-               distances[i.router] = (distances[i.router] || 0) + 1;
-            });
-
-            unique_routers_count_by_dates = []
-            _.each(_.keys(distances), function(i) {
-              c = {}
-              c["name"] = i
-              c["sum"] = distances[i]
-              unique_routers_count_by_dates.push(c)
-            })
-
-            d = {}
-            d["date"] = x
-            d["users"] = users_by_day
-            d["users_by_dates"] = unique_routers_count_by_dates
-
-            users_by_dates.push(d)
+          date_range = getDates($scope.datePicker.date.startDate, $scope.datePicker.date.endDate)
+          $scope.unique_routers_count_by_user_date = unique_routers_by_dates_fxn(date_range)
+          date_range_formatted = []
+          _.each(date_range, function(i) {
+            date_range_formatted.push(moment(i).format('MM-DD'))
           })
+          $scope.date_range_formatted = date_range_formatted
+        });
 
-          console.log(users_by_dates)
+        unique_routers_by_dates_fxn = function(date_range) {
           unique_routers_count_by_user_date = []
           _.each($scope.unique_routers, function(i) {
             dates = []
@@ -165,10 +208,8 @@ angular.module('Friso.controllers')
             d["dates"] = dates
             unique_routers_count_by_user_date.push(d)
           })
-          console.log(unique_routers_count_by_user_date)
-
-          $scope.unique_routers_count_by_user_date = unique_routers_count_by_user_date
-        });
+          return unique_routers_count_by_user_date
+      }
 
 
 
@@ -182,12 +223,6 @@ angular.module('Friso.controllers')
           }
           return dateArray;
         }
-
-        startData = 'November 11 2017'
-        endData = 'November 18 2017'
-
-        date_range = getDates(startData, endData)
-        $scope.date_range = date_range
 
 
         $scope.exportTable = function(event){

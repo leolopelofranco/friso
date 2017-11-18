@@ -79,4 +79,24 @@ tr {
   .post_img {
     max-width: 120px;
   }
+  .search-bar {
+    top: 12px;
+    padding: 12px;
+    left: 28px;
+    width: 45%;
+    border: none;
+    border-bottom: 1px solid;
+  }
+  .sort-by {
+    position: relative;
+    top: 7px;
+    float: right;
+    text-align: right;
+    right: 15px;
+    width: 20%;
+
+    p {
+      display: inline-block;
+    }
+  }
 }

@@ -21,5 +21,7 @@
 //= require angular-nvd3.min
 //= require ngDialog.min
 //= require_tree ../templates
+//= require angular-daterangepicker.min
+//= require daterangepicker
 
 //= require_tree .
