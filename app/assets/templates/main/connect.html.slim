@@ -37,6 +37,29 @@
               | {{i.device}}
             td
               | {{i.router}}
+              
+  .chart_card.row-space-top-5
+    .head.center 
+      h4 Unique Routers Date Breakdown
+      .dropdown
+        button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"
+          | Export Table 
+          i.fa.fa-download 
+    .chart_content
+      .table-responsive.table_margin
+        table.table.table-striped.table-hover#table_export
+          thead
+            tr 
+              th Site Name
+              th ng-repeat="i in date_range"
+                | {{i}}
+          tr.pointer-cursor.search-table ng-repeat="x in unique_routers_count_by_user_date"
+            td
+              | {{x.site}}
+            td ng-repeat="g in x.dates"
+              | {{g.users.length}}
+        
+
   .chart_card.row-space-top-5
     .head.center 
       h4 Unique Routers Breakdown
