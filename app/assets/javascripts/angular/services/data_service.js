@@ -26,4 +26,16 @@ angular.module('Friso.services')
 
       return d.promise;
     }
+
+    this.data_unilab = function() {
+      var d = $q.defer();
+      $http({
+        method: 'GET',
+        url: 'https://api.aircast.ph/wiflexGetUserInfo',
+      }).then(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
 }]);

@@ -36,6 +36,16 @@ Friso.config(["$stateProvider", "$httpProvider", "$urlRouterProvider", "$locatio
       }
     })
 
+    .state('nav.unilab', {
+      url: '/unilab',
+      views: {
+        'content@nav': {
+          templateUrl: 'main/unilab.html',
+          controller: 'UnilabController'
+        }
+      }
+    })
+
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({

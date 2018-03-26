@@ -1,0 +1,43 @@
+.container
+  .chart_card.row-space-top-5
+    .head.center 
+      h4 Project Unilab Users({{users.length}})
+      .dropdown
+        button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"
+          | Export Table 
+          i.fa.fa-download 
+    .chart_content
+      .filters
+        a href="#" ng-repeat="filter_key in filter_keys" ng-click="filters(filter_key.key)"
+          | {{filter_key.name}} | 
+      .table-responsive.table_margin
+        table.table.table-striped.table-hover
+          thead
+            tr
+              th Brand
+              th Name
+              th Gender
+              th Email
+              th Birthday
+              th Mobile Number
+              th Civil Status
+              th Address
+          tr.pointer-cursor.search-table ng-repeat="i in users"
+            td
+              | {{i.Brand}}
+            td
+              a target="_blank"
+                | {{i.Name}}
+            td
+              | {{i.Gender}}
+            td
+              | {{i.Email}}
+            td
+              | {{i.DateOfBirth}}
+            td
+              | {{i.MobileNumber}}
+            td
+              | {{i.CivilStatus}}
+            td
+              | {{i.Address}}
+                        
