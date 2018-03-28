@@ -27,7 +27,7 @@ gem 'sprockets', '2.12.3'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-gem 'pg'
+gem 'pg','0.21.0'
 gem 'jquery-ui-rails'
 gem 'angularjs-rails'
 gem 'angular-ui-bootstrap-rails'
