@@ -11,7 +11,7 @@
         a href="#" ng-repeat="filter_key in filter_keys" ng-click="filters(filter_key.key)"
           | {{filter_key.name}} | 
       .table-responsive.table_margin
-        table.table.table-striped.table-hover
+        table.table.table-striped.table-hover#table_export
           thead
             tr
               th Brand
@@ -21,7 +21,9 @@
               th Birthday
               th Mobile Number
               th Civil Status
-              th Address 
+              th Address
+              th Responses
+              th Average Time (sec)
           tr.pointer-cursor.search-table ng-repeat="i in users"
             td
               | {{i.Brand}}
@@ -40,4 +42,8 @@
               | {{i.CivilStatus}}
             td
               | {{i.Address}}
-                        
+            td
+              | {{i.Responses}}
+            td
+              | {{i.difference}}
+                      
