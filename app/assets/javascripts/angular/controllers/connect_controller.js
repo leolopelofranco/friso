@@ -65,6 +65,28 @@ angular.module('Friso.controllers')
         }
       }
 
+
+      $scope.topic = {}
+      $scope.topic.keywords = 'awesome'
+      $scope.topic.pageIDs = 'cloudfone'
+      $scope.topic.startDate =1522540800
+      $scope.topic.endDate =1527233566
+
+      DataService.nograles($scope.topic)
+        .then(function(d){
+          console.log(d)
+          $scope.nograles_data = d.data.data
+        })
+
+      $scope.search = function(data) {
+        console.log($scope.topic)
+        DataService.nograles(data)
+          .then(function(d){
+            console.log(d)
+            $scope.nograles_data = d.data.data
+          })
+      }
+
       DataService.connect_users()
         .then(function(d){
 
@@ -173,7 +195,7 @@ angular.module('Friso.controllers')
           })
         return unique_routers_count_by_user_date
       }
-      
+
       function getDates(startDate, stopDate) {
         var dateArray = [];
         var currentDate = moment(startDate);

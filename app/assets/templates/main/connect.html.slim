@@ -1,6 +1,51 @@
 .container
   .chart_card.row-space-top-5
     .head.center 
+      h4 Nograles Report ({{nograles_data.length}})
+      .dropdown
+        button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"
+          | Export Table 
+          i.fa.fa-download 
+    .chart_content
+      h5 Keyword
+      input.search-bar type="text" ng-model="topic.keywords" placeholder="Quick Search"
+      h5 Page Ids
+      input.search-bar type="text" ng-model="topic.pageIDs" placeholder="Quick Search"
+      h5 Start date
+      input.search-bar type="text" ng-model="topic.startDate" placeholder="Quick Search"
+      h5 End date
+      input.search-bar type="text" ng-model="topic.endDate" placeholder="Quick Search"
+      button.btn.btn-warning.full-width.row-space-top-3 ng-click="search(topic)" type="button"
+        | Search
+      .table-responsive.table_margin
+        table.table.table-striped.table-hover#table_export
+          thead
+            tr
+              th Post ID
+              th Message
+              th CreatedDate
+              th Type
+              th Reactions
+              th Comments 
+              th Shares
+          tr.pointer-cursor.search-table ng-repeat="i in nograles_data"
+            td 
+              a target="_blank" href="http://facebook.com/{{i.PostID}}"
+                | {{i.PostID}}
+            td
+              | {{i.Message | cut:true:200:' ...'}}
+            td
+              | {{i.CreatedDate}}
+            td
+              | {{i.Type}}
+            td
+              | {{i.Reactions}}
+            td
+              | {{i.Comments}}
+            td
+              | {{i.Shares}}
+  .chart_card.row-space-top-5
+    .head.center 
       h4 Project Connect Users({{users.length}})
       .dropdown
         button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"

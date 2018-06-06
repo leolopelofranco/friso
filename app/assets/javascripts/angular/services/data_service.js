@@ -38,4 +38,16 @@ angular.module('Friso.services')
 
       return d.promise;
     }
+
+    this.nograles = function(data) {
+      var d = $q.defer();
+      $http({
+        method: 'GET',
+        url: 'http://ec2-13-250-103-104.ap-southeast-1.compute.amazonaws.com/digital.com/public/dashboard/pagesearch/PageID/' + data.pageIDs + '/KeyWord/'+ data.keywords + '/StartDate/'+ data.startDate +'/EndDate/'+ data.endDate,
+      }).then(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
 }]);
