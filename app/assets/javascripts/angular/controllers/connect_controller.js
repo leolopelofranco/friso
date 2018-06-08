@@ -68,6 +68,7 @@ angular.module('Friso.controllers')
 
       $scope.topic = {}
       $scope.topic.keywords = 'awesome'
+      $scope.topic.comment_keywords = ''
       $scope.topic.pageIDs = 'cloudfone'
       $scope.topic.startDate =1522540800
       $scope.topic.endDate =1527233566
@@ -82,12 +83,14 @@ angular.module('Friso.controllers')
         console.log(data)
         keys = data.keywords.split(',')
         pages = data.pageIDs.split(',')
+        comments = data.comment_keywords.split(',')
 
         d = {
           KeyWord: keys,
           PageID: pages,
           StartDate: data.startDate,
-          EndDate: data.endDate
+          EndDate: data.endDate,
+          comments: data.comments
         }
         console.log(d)
         DataService.nograles_post(d)

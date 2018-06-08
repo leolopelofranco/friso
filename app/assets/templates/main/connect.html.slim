@@ -7,14 +7,26 @@
           | Export Table 
           i.fa.fa-download 
     .chart_content
-      h5 Keyword
-      input.search-bar type="text" ng-model="topic.keywords" placeholder="Quick Search"
-      h5 Page Ids
-      input.search-bar type="text" ng-model="topic.pageIDs" placeholder="Quick Search"
-      h5 Start date
-      input.search-bar type="text" ng-model="topic.startDate" placeholder="Quick Search"
-      h5 End date
-      input.search-bar type="text" ng-model="topic.endDate" placeholder="Quick Search"
+    
+      .row
+        .col-md-6
+          h5 Post Keyword
+          input.search-bar.full-width type="text" ng-model="topic.keywords" placeholder="Quick Search"
+        .col-md-6  
+          h5 Comment Keywords
+          input.search-bar.full-width type="text" ng-model="topic.comment_keywords" placeholder="Quick Search"
+      .row 
+        .col-md-12
+          h5 Page Ids
+          input.search-bar.full-width type="text" ng-model="topic.pageIDs" placeholder="Quick Search"
+      .row
+        .col-md-6
+          h5 Start date
+          input.search-bar.full-width type="text" ng-model="topic.startDate" placeholder="Quick Search"
+        .col-md-6
+          h5 End date
+          input.search-bar.full-width type="text" ng-model="topic.endDate" placeholder="Quick Search"
+      
       button.btn.btn-warning.full-width.row-space-top-3 ng-click="search(topic)" type="button"
         | Search
       .table-responsive.table_margin
@@ -28,6 +40,7 @@
               th Reactions
               th Comments 
               th Shares
+              th Mentions
           tr.pointer-cursor.search-table ng-repeat="i in nograles_data"
             td 
               a target="_blank" href="http://facebook.com/{{i.PostID}}"
@@ -44,6 +57,8 @@
               | {{i.Comments}}
             td
               | {{i.Shares}}
+            td
+              | {{i.Mentions}}
   .chart_card.row-space-top-5
     .head.center 
       h4 Project Connect Users({{users.length}})
