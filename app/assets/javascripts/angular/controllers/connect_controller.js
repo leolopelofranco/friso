@@ -84,13 +84,13 @@ angular.module('Friso.controllers')
         pages = data.pageIDs.split(',')
 
         d = {
-          keywords: keys,
-          pageIDs: pages,
-          startDate: data.startDate,
-          endDate: data.endDate
+          KeyWord: keys,
+          PageID: pages,
+          StartDate: data.startDate,
+          EndDate: data.endDate
         }
         console.log(d)
-        DataService.nograles(data)
+        DataService.nograles_post(d)
           .then(function(d){
             console.log(d)
             $scope.nograles_data = d.data.data
