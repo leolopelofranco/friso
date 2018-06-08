@@ -79,7 +79,17 @@ angular.module('Friso.controllers')
         })
 
       $scope.search = function(data) {
-        console.log($scope.topic)
+        console.log(data)
+        keys = data.keywords.split(',')
+        pages = data.pageIDs.split(',')
+
+        d = {
+          keywords: keys,
+          pageIDs: pages,
+          startDate: data.startDate,
+          endDate: data.endDate
+        }
+        console.log(d)
         DataService.nograles(data)
           .then(function(d){
             console.log(d)

@@ -50,4 +50,18 @@ angular.module('Friso.services')
 
       return d.promise;
     }
+
+    this.nograles_post = function(data) {
+      var d = $q.defer();
+      $http({
+        method: 'POST',
+        url: 'https://dashboard.aircast.ph/pagebulkall',
+        data: data
+
+      }).then(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
 }]);
