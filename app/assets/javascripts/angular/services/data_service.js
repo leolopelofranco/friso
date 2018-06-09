@@ -55,7 +55,7 @@ angular.module('Friso.services')
       var d = $q.defer();
       $http({
         method: 'POST',
-        url: 'https://dashboard.aircast.ph/pagebulkall',
+        url: 'http://ec2-13-250-103-104.ap-southeast-1.compute.amazonaws.com/digital.com/public/dashboard/pagebulkall',
         data: data
 
       }).then(function(data){

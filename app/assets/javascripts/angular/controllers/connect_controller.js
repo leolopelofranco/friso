@@ -90,7 +90,7 @@ angular.module('Friso.controllers')
           PageID: pages,
           StartDate: data.startDate,
           EndDate: data.endDate,
-          comments: data.comments
+          CommentFilter: comments
         }
         console.log(d)
         DataService.nograles_post(d)
