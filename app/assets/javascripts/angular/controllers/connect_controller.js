@@ -73,7 +73,7 @@ angular.module('Friso.controllers')
       $scope.topic.startDate =1522540800
       $scope.topic.endDate =1527233566
 
-      DataService.nograles($scope.topic)
+      DataService.nograles_post($scope.topic)
         .then(function(d){
           console.log(d)
           $scope.nograles_data = d.data.data

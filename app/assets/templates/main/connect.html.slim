@@ -33,6 +33,7 @@
         table.table.table-striped.table-hover#table_export
           thead
             tr
+              th Page ID
               th Post ID
               th Message
               th CreatedDate
@@ -42,6 +43,8 @@
               th Shares
               th Mentions
           tr.pointer-cursor.search-table ng-repeat="i in nograles_data"
+            td
+              | {{i.PageID}}
             td 
               a target="_blank" href="http://facebook.com/{{i.PostID}}"
                 | {{i.PostID}}
