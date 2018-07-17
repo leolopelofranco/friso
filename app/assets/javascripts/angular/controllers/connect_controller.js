@@ -67,36 +67,88 @@ angular.module('Friso.controllers')
 
 
       $scope.topic = {}
-      $scope.topic.keywords = 'awesome'
-      $scope.topic.comment_keywords = ''
-      $scope.topic.pageIDs = 'cloudfone'
-      $scope.topic.startDate =1522540800
-      $scope.topic.endDate =1527233566
+      $scope.topic.KeyWord = 'dengvaxia'
+      $scope.topic.CommentFilter = 'nograles,bam,tolentino,roque,poe,angara,villar,ejercito,cayetano,bong,uson,manicad,aguilar,binay,duterte,pimentel,tulfo,dela Rosa,estrada,andanar,lapid,imee'
+      $scope.topic.PageID = 'News5Everywhere'
+      $scope.topic.StartDate = 1530403200
+      $scope.topic.EndDate = 1531209906
+      $scope.topic.Token = "EAADZBXIds1zwBADjMTCIwthGP7jEGguv3whJSI3TucMMBVFFkI7BC0ZBQKVH44F2oMuQtZB15NRdJxKBqbxTjii3SUhVjh7HXHJpR69NaOrnsvCkAzJ82ERdPMrs3uALWEjH9OkjESKzQdqZBx63OhaFzagZB4DUTCOEMShLouQZDZD"
 
-      DataService.nograles_post($scope.topic)
+
+      keys = $scope.topic.KeyWord.split(',')
+      pages = $scope.topic.PageID.split(',')
+      comments = $scope.topic.CommentFilter.split(',')
+
+      d = {
+        KeyWord: keys,
+        PageID: pages,
+        StartDate: $scope.topic.StartDate,
+        EndDate: $scope.topic.EndDate,
+        CommentFilter: comments,
+        Token: $scope.topic.Token
+      }
+
+      DataService.nograles_post(d)
         .then(function(d){
-          console.log(d)
           $scope.nograles_data = d.data.data
+        })
+
+      $scope.post = {}
+      $scope.post.PostID = '142802334452_10157025865999453'
+      $scope.post.KeyWord = 'nograles,bam,tolentino,roque,poe,angara,villar,ejercito,cayetano,bong,uson,manicad,aguilar,binay,duterte,pimentel,tulfo,dela Rosa,estrada,andanar,lapid,imee'
+      comment_keys = $scope.post.KeyWord.split(',')
+
+      post = {
+        PostID: $scope.post.PostID,
+        CommentFilter: comment_keys,
+        Token: $scope.topic.Token
+      }
+
+
+      DataService.post_analysis(post)
+        .then(function(x){
+
+          $scope.post_data = x.data
+          console.log($scope.post_data)
         })
 
       $scope.search = function(data) {
         console.log(data)
-        keys = data.keywords.split(',')
-        pages = data.pageIDs.split(',')
-        comments = data.comment_keywords.split(',')
+        keys = data.KeyWord.split(',')
+        pages = data.PageID.split(',')
+        comments = data.CommentFilter.split(',')
 
         d = {
           KeyWord: keys,
           PageID: pages,
-          StartDate: data.startDate,
-          EndDate: data.endDate,
-          CommentFilter: comments
+          StartDate: data.StartDate,
+          EndDate: data.EndDate,
+          CommentFilter: comments,
+          Token: $scope.topic.Token
         }
-        console.log(d)
         DataService.nograles_post(d)
           .then(function(d){
             console.log(d)
             $scope.nograles_data = d.data.data
+          })
+      }
+
+      $scope.search_link = function(data) {
+        comment_keys = $scope.post.KeyWord.split(',')
+
+        post = {
+          PostID: $scope.post.PostID,
+          CommentFilter: comment_keys,
+          Token: $scope.topic.Token
+        }
+
+        
+
+        DataService.post_analysis(post)
+          .then(function(x){
+
+            $scope.post_data = x.data
+            console.log($scope.post_data)
           })
       }
 

@@ -6,26 +6,25 @@
         button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"
           | Export Table 
           i.fa.fa-download 
-    .chart_content
-    
+    .chart_content  
       .row
         .col-md-6
           h5 Post Keyword
-          input.search-bar.full-width type="text" ng-model="topic.keywords" placeholder="Quick Search"
+          input.search-bar.full-width type="text" ng-model="topic.KeyWord" placeholder="Quick Search"
         .col-md-6  
           h5 Comment Keywords
-          input.search-bar.full-width type="text" ng-model="topic.comment_keywords" placeholder="Quick Search"
+          input.search-bar.full-width type="text" ng-model="topic.CommentFilter" placeholder="Quick Search"
       .row 
         .col-md-12
           h5 Page Ids
-          input.search-bar.full-width type="text" ng-model="topic.pageIDs" placeholder="Quick Search"
+          input.search-bar.full-width type="text" ng-model="topic.PageID" placeholder="Quick Search"
       .row
         .col-md-6
           h5 Start date
-          input.search-bar.full-width type="text" ng-model="topic.startDate" placeholder="Quick Search"
+          input.search-bar.full-width type="text" ng-model="topic.StartDate" placeholder="Quick Search"
         .col-md-6
           h5 End date
-          input.search-bar.full-width type="text" ng-model="topic.endDate" placeholder="Quick Search"
+          input.search-bar.full-width type="text" ng-model="topic.EndDate" placeholder="Quick Search"
       
       button.btn.btn-warning.full-width.row-space-top-3 ng-click="search(topic)" type="button"
         | Search
@@ -62,6 +61,50 @@
               | {{i.Shares}}
             td
               | {{i.CommentMention}}
+  .chart_card.row-space-top-5
+    .head.center 
+      h4 Poast Analysis Report ({{post_data.length}})
+      .dropdown
+        button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"
+          | Export Table 
+          i.fa.fa-download 
+    .chart_content
+      .row
+        .col-md-6
+          h5 Post Keyword
+          input.search-bar.full-width type="text" ng-model="post.KeyWord" placeholder="Quick Search"
+        .col-md-6  
+          h5 Post ID
+          input.search-bar.full-width type="text" ng-model="post.PostID" placeholder="Quick Search"
+      button.btn.btn-warning.full-width.row-space-top-3 ng-click="search_link(post)" type="button"
+        | Search
+      .table-responsive.table_margin
+        table.table.table-striped.table-hover#table_export
+          thead
+            tr
+              th Comments
+              th Message
+              th Created Date
+              th Reactions
+              th Comments 
+              th Shares
+              th Mentions
+          tr.pointer-cursor.search-table
+            td 
+              a target="_blank" href="http://facebook.com/{{post_data.PostID}}"
+                | {{post_data.PostID}}
+            td
+              | {{post_data.Message | cut:true:20:' ...'}}
+            td
+              | {{post_data.CreatedTime}}
+            td
+              | {{post_data.ReactionsCount}}
+            td
+              | {{post_data.CommentsCount}}
+            td
+              | {{post_data.SharesCount}}
+            td
+              | {{post_data.CommentFilterCount}}
   .chart_card.row-space-top-5
     .head.center 
       h4 Project Connect Users({{users.length}})

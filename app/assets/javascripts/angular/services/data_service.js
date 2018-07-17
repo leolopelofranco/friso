@@ -55,7 +55,26 @@ angular.module('Friso.services')
       var d = $q.defer();
       $http({
         method: 'POST',
-        url: 'http://ec2-13-250-103-104.ap-southeast-1.compute.amazonaws.com/digital.com/public/dashboard/pagebulkall',
+        url: 'http://laraveltestproject.herokuapp.com/api/pagebulkallwithtoken',
+        headers: {
+        'Content-Type': 'application/json'},
+        data: data
+
+      }).then(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
+    this.post_analysis = function(data) {
+      console.log(data)
+      var d = $q.defer();
+      $http({
+        method: 'POST',
+        url: 'http://laraveltestproject.herokuapp.com/api/postwithtoken',
+        headers: {
+        'Content-Type': 'application/json'},
         data: data
 
       }).then(function(data){
