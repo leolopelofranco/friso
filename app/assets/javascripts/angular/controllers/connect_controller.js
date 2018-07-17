@@ -142,7 +142,7 @@ angular.module('Friso.controllers')
           Token: $scope.topic.Token
         }
 
-        
+
 
         DataService.post_analysis(post)
           .then(function(x){
@@ -275,6 +275,12 @@ angular.module('Friso.controllers')
 
       $scope.exportTable = function(event){
         var table = angular.element("#table_export");
+
+        table.tableExport({type:'csv',escape:'false'});
+      }
+
+      $scope.exportTable1 = function(event){
+        var table = angular.element("#table_export1");
 
         table.tableExport({type:'csv',escape:'false'});
       }

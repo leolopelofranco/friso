@@ -65,7 +65,7 @@
     .head.center 
       h4 Poast Analysis Report ({{post_data.length}})
       .dropdown
-        button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"
+        button.btn.btn-warning.dropdown-toggle ng-click="exportTable1()" data-toggle="dropdown" type="button"
           | Export Table 
           i.fa.fa-download 
     .chart_content
@@ -79,7 +79,7 @@
       button.btn.btn-warning.full-width.row-space-top-3 ng-click="search_link(post)" type="button"
         | Search
       .table-responsive.table_margin
-        table.table.table-striped.table-hover#table_export
+        table.table.table-striped.table-hover#table_export1
           thead
             tr
               th Comments
