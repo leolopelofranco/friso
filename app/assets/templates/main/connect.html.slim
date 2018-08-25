@@ -63,6 +63,55 @@
               | {{i.CommentMention}}
   .chart_card.row-space-top-5
     .head.center 
+      h4 Sentiment Analysis Report
+      .dropdown
+        button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"
+          | Export Table 
+          i.fa.fa-download 
+    .chart_content  
+      .row
+        .col-md-4
+          h5 Post Keyword
+          input.search-bar.full-width type="text" ng-model="sentiment.KeyWord" placeholder="Quick Search"
+        .col-md-4
+          h5 Positive Keywords
+          input.search-bar.full-width type="text" ng-model="sentiment.PosWord" placeholder="Quick Search"
+        .col-md-4
+          h5 Negative Keywords
+          input.search-bar.full-width type="text" ng-model="sentiment.NegWord" placeholder="Quick Search"
+      .row 
+        .col-md-12
+          h5 Page Ids
+          input.search-bar.full-width type="text" ng-model="sentiment.PageID" placeholder="Quick Search"
+      .row
+        .col-md-6
+          h5 Start date
+          input.search-bar.full-width type="text" ng-model="sentiment.StartDate" placeholder="Quick Search"
+        .col-md-6
+          h5 End date
+          input.search-bar.full-width type="text" ng-model="sentiment.EndDate" placeholder="Quick Search"
+      
+      button.btn.btn-warning.full-width.row-space-top-3 ng-click="sentiment_analysis(sentiment)" type="button"
+        | Search
+      .table-responsive.table_margin
+        table.table.table-striped.table-hover#table_export
+          thead
+            tr
+              th Page ID
+              th Post Count
+              th Positive Counts
+              th Negative Counts
+          tr.pointer-cursor.search-table
+            td
+              | {{sentiment_data.PageID}}
+            td
+              | {{sentiment_data.PostCount}}
+            td
+              | {{sentiment_data.PosWordCount}}
+            td
+              | {{sentiment_data.NegWordCount}}
+  .chart_card.row-space-top-5
+    .head.center 
       h4 Poast Analysis Report ({{post_data.length}})
       .dropdown
         button.btn.btn-warning.dropdown-toggle ng-click="exportTable1()" data-toggle="dropdown" type="button"

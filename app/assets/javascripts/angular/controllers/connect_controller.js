@@ -66,12 +66,65 @@ angular.module('Friso.controllers')
       }
 
 
+      $scope.sentiment = {}
+
+      $scope.sentiment.Token = "EAADZBXIds1zwBADjMTCIwthGP7jEGguv3whJSI3TucMMBVFFkI7BC0ZBQKVH44F2oMuQtZB15NRdJxKBqbxTjii3SUhVjh7HXHJpR69NaOrnsvCkAzJ82ERdPMrs3uALWEjH9OkjESKzQdqZBx63OhaFzagZB4DUTCOEMShLouQZDZD"
+      $scope.sentiment.StartDate = 1530403200
+      $scope.sentiment.EndDate = 1532995200
+      $scope.sentiment.PageID = 'cloudfone'
+      $scope.sentiment.PosWord = 'yes'
+      $scope.sentiment.NegWord = 'maglabas'
+      $scope.sentiment.KeyWord = 'cloudfone'
+
+      positive_words = $scope.sentiment.PosWord.split(',')
+      negative_words = $scope.sentiment.NegWord.split(',')
+      keywords = $scope.sentiment.KeyWord.split(',')
+
+      sen = {
+        KeyWord: keywords,
+        PageID: $scope.sentiment.PageID,
+        StartDate: $scope.sentiment.StartDate,
+        EndDate: $scope.sentiment.EndDate,
+        NegWord: negative_words,
+        PosWord: positive_words,
+        Token: $scope.sentiment.Token
+      }
+
+      $scope.sentiment_analysis = function(data) {
+
+        console.log(data)
+        keys = data.KeyWord.split(',')
+        positive_words = data.PosWord.split(',')
+        negative_words = data.NegWord.split(',')
+
+        d = {
+          KeyWord: keys,
+          PageID: data.PageID,
+          StartDate: data.StartDate,
+          EndDate: data.EndDate,
+          NegWord: negative_words,
+          PosWord: positive_words,
+          Token: $scope.sentiment.Token
+        }
+
+        console.log(d)
+
+        DataService.sentiment_analysis(d)
+          .then(function(d){
+            $scope.sentiment_data = d.data
+            console.log($scope.sentiment_data)
+          })
+      }
+
+
       $scope.topic = {}
-      $scope.topic.KeyWord = 'dengvaxia'
+      $scope.topic.KeyWord = ' '
       $scope.topic.CommentFilter = 'nograles,bam,tolentino,roque,poe,angara,villar,ejercito,cayetano,bong,uson,manicad,aguilar,binay,duterte,pimentel,tulfo,dela Rosa,estrada,andanar,lapid,imee'
-      $scope.topic.PageID = 'News5Everywhere'
+      $scope.topic.PageID = 'abscbnNEWS'
+      // $scope.topic.StartDate = 1531958400
+      // $scope.topic.EndDate = 1532516381
       $scope.topic.StartDate = 1530403200
-      $scope.topic.EndDate = 1531209906
+      $scope.topic.EndDate = 1532995200
       $scope.topic.Token = "EAADZBXIds1zwBADjMTCIwthGP7jEGguv3whJSI3TucMMBVFFkI7BC0ZBQKVH44F2oMuQtZB15NRdJxKBqbxTjii3SUhVjh7HXHJpR69NaOrnsvCkAzJ82ERdPMrs3uALWEjH9OkjESKzQdqZBx63OhaFzagZB4DUTCOEMShLouQZDZD"
 
 

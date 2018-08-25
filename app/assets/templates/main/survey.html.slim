@@ -1,0 +1,22 @@
+nav.navbar
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle data-target="#myNavbar" data-toggle="collapse" type="button"
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      / a href="#"  WebSiteName
+      a.navbar-brand href="/"
+        = image_tag 'warwick.png'
+.height-75
+
+.home
+  h3
+    | Who among these candidates would you know whether by name or by face?  Please choose as many as you can.
+  .row-space-top-2
+  .interests
+    .inline ng-repeat="interest in interests"
+      .choices
+        label.size.green-outline ng-class="{'active-interest' : isChecked}"
+          input.removeCheckbox type="checkbox" ng-model="isChecked"
+          span.ss-icon.ss-heart ng-class="{'streamline-30px-filled-in':isChecked}"

@@ -46,6 +46,15 @@ Friso.config(["$stateProvider", "$httpProvider", "$urlRouterProvider", "$locatio
       }
     })
 
+    .state('survey', {
+      url: '/survey',
+      templateUrl: 'main/survey.html',
+      controller: 'SurveyController'
+
+      }
+
+    )
+
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
