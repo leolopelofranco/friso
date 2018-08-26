@@ -79,10 +79,11 @@ angular.module('Friso.controllers')
       positive_words = $scope.sentiment.PosWord.split(',')
       negative_words = $scope.sentiment.NegWord.split(',')
       keywords = $scope.sentiment.KeyWord.split(',')
+      PageIDs = $scope.sentiment.PageID.split(',')
 
       sen = {
         KeyWord: keywords,
-        PageID: $scope.sentiment.PageID,
+        PageID: PageIDs,
         StartDate: $scope.sentiment.StartDate,
         EndDate: $scope.sentiment.EndDate,
         NegWord: negative_words,
@@ -96,10 +97,11 @@ angular.module('Friso.controllers')
         keys = data.KeyWord.split(',')
         positive_words = data.PosWord.split(',')
         negative_words = data.NegWord.split(',')
+        page_ids = data.PageID.split(',')
 
         d = {
           KeyWord: keys,
-          PageID: data.PageID,
+          PageID: page_ids,
           StartDate: data.StartDate,
           EndDate: data.EndDate,
           NegWord: negative_words,
@@ -111,7 +113,7 @@ angular.module('Friso.controllers')
 
         DataService.sentiment_analysis(d)
           .then(function(d){
-            $scope.sentiment_data = d.data
+            $scope.sentiment_data = d.data.PagesResult
             console.log($scope.sentiment_data)
           })
       }
@@ -334,6 +336,12 @@ angular.module('Friso.controllers')
 
       $scope.exportTable1 = function(event){
         var table = angular.element("#table_export1");
+
+        table.tableExport({type:'csv',escape:'false'});
+      }
+
+      $scope.exportTable2 = function(event){
+        var table = angular.element("#table_export2");
 
         table.tableExport({type:'csv',escape:'false'});
       }

@@ -65,7 +65,7 @@
     .head.center 
       h4 Sentiment Analysis Report
       .dropdown
-        button.btn.btn-warning.dropdown-toggle ng-click="exportTable()" data-toggle="dropdown" type="button"
+        button.btn.btn-warning.dropdown-toggle ng-click="exportTable2()" data-toggle="dropdown" type="button"
           | Export Table 
           i.fa.fa-download 
     .chart_content  
@@ -94,22 +94,19 @@
       button.btn.btn-warning.full-width.row-space-top-3 ng-click="sentiment_analysis(sentiment)" type="button"
         | Search
       .table-responsive.table_margin
-        table.table.table-striped.table-hover#table_export
+        table.table.table-striped.table-hover#table_export2
           thead
             tr
               th Page ID
-              th Post Count
               th Positive Counts
               th Negative Counts
-          tr.pointer-cursor.search-table
+          tr.pointer-cursor.search-table ng-repeat="sentiment_d in sentiment_data"
             td
-              | {{sentiment_data.PageID}}
+              | {{sentiment_d.PageID}}
             td
-              | {{sentiment_data.PostCount}}
+              | {{sentiment_d.PosWordCount}}
             td
-              | {{sentiment_data.PosWordCount}}
-            td
-              | {{sentiment_data.NegWordCount}}
+              | {{sentiment_d.NegWordCount}}
   .chart_card.row-space-top-5
     .head.center 
       h4 Poast Analysis Report ({{post_data.length}})
