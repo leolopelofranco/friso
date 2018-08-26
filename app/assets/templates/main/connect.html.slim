@@ -63,7 +63,7 @@
               | {{i.CommentMention}}
   .chart_card.row-space-top-5
     .head.center 
-      h4 Sentiment Analysis Report
+      h4 Sentiment Analysis Report ({{sentiment_data.length}})
       .dropdown
         button.btn.btn-warning.dropdown-toggle ng-click="exportTable2()" data-toggle="dropdown" type="button"
           | Export Table 
@@ -100,6 +100,8 @@
               th Page ID
               th Positive Counts
               th Negative Counts
+              th Comment Counts
+              th Keyword Counts
           tr.pointer-cursor.search-table ng-repeat="sentiment_d in sentiment_data"
             td
               | {{sentiment_d.PageID}}
@@ -107,6 +109,10 @@
               | {{sentiment_d.PosWordCount}}
             td
               | {{sentiment_d.NegWordCount}}
+            td
+              | {{sentiment_d.CommentCount}}
+            td
+              | {{sentiment_d.KeyWordCount}}
   .chart_card.row-space-top-5
     .head.center 
       h4 Poast Analysis Report ({{post_data.length}})

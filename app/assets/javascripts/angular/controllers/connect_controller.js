@@ -91,9 +91,12 @@ angular.module('Friso.controllers')
         Token: $scope.sentiment.Token
       }
 
+      $scope.counter = 0
+
       $scope.sentiment_analysis = function(data) {
 
         console.log(data)
+
         keys = data.KeyWord.split(',')
         positive_words = data.PosWord.split(',')
         negative_words = data.NegWord.split(',')
@@ -115,6 +118,7 @@ angular.module('Friso.controllers')
           .then(function(d){
             $scope.sentiment_data = d.data.PagesResult
             console.log($scope.sentiment_data)
+            $scope.counter = $scope.counter + 1
           })
       }
 
