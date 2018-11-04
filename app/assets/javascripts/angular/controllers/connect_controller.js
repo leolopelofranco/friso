@@ -123,6 +123,53 @@ angular.module('Friso.controllers')
       }
 
 
+      $scope.sentiment_post = {}
+
+      $scope.sentiment_post.Token = "EAADZBXIds1zwBADjMTCIwthGP7jEGguv3whJSI3TucMMBVFFkI7BC0ZBQKVH44F2oMuQtZB15NRdJxKBqbxTjii3SUhVjh7HXHJpR69NaOrnsvCkAzJ82ERdPMrs3uALWEjH9OkjESKzQdqZBx63OhaFzagZB4DUTCOEMShLouQZDZD"
+      $scope.sentiment_post.PostLinks = 'cloudfone'
+      $scope.sentiment_post.PosWord = "good job,role model,mabait,brilliant,good example,excellent,mabuti,hardworking,nagmamalasakit,satisfied,totoo,many accomplishments,magaling,mabuhay,industrious,masipag,bait,bilib ako sayo,we are proud of you,tunay na pagbabago,galing,kudos,less corruption,may malasakit,great work,heart of gold,idol,galing naman,salamat,dedicated,one of a kind,noble,commendable,people person,walang kapaguran ,credible,matulungin,may malasakit,makabayan,the best,highly comendable,has the heart for the masses,thank you for the support,hanga ako,dapat tularan,you have done well,number 1,ginagampanan ang trabaho,masipag,gusto kita,hindi napipikon,thinking of whats good,best senator,workaholic,may hangarin para sa edukasyon,has potential to be president,keep up the good work,i like your attitude,righteous,i look up to you,lifesaver,simple,totoo,silent hardworking senator,respectable ,concerned,sana magtagumpay ka,following the legacy ,supportive,may hangarin makatulong,hindi dagdag pahirap,awesome,tunay na daan sa kapayapaan ,pursigido,walang nagawa,great deeds done,outstanding,maraming napatunayan,may pakainabang,magkaisa"
+      $scope.sentiment_post.NegWord = 'pasikat,bobo,plastic,dummy,hypocrite,kapal,pakitang tao,bias,fake,publicity stunt,envious,epal,no changes,use your head,disgusting,walang na implement,walang nagawa,traydor,treacherous,dont trust you,project grabber,no credibility,sayang ,lost your name,utang pa namin sayo,manloloko,sayang ang support,magnanakaw,sira ulo,disappointing,sad,purveyors of fake news,watchdogs,bulag,malicious,greedy,underdog,papogi,please take action,ganda lang,huwag iboto,puro salita,puro daldal,sweetheart deals for preferred friends,position grabber,feeling mananalo,ambisyosa,inggitera,ganid,mamamatay tao,daming haters,lakas makapuna,stupid,hudas,demonyo,kapal ng mukha,gago,abnormal,do not like ,dangerous,bogok,kawatan,kontabida,kunwari perpekto,corrupt,waste of time,papansin,epal'
+
+
+      positive_words = $scope.sentiment_post.PosWord.split(',')
+      negative_words = $scope.sentiment_post.NegWord.split(',')
+      PostLinks = $scope.sentiment_post.PostLinks.split(',')
+
+      sen_post = {
+        PostLinks: PostLinks,
+        NegWord: negative_words,
+        PosWord: positive_words,
+        Token: $scope.sentiment_post.Token
+      }
+
+      $scope.counter = 0
+
+      $scope.sentiment_post_analysis = function(data) {
+
+        console.log(data)
+
+        positive_words = data.PosWord.split(',')
+        negative_words = data.NegWord.split(',')
+        post_links = data.PostLinks.split(',')
+
+        d = {
+          PostLink: post_links,
+          NegWord: negative_words,
+          PosWord: positive_words,
+          Token: $scope.sentiment.Token
+        }
+
+        console.log(d)
+
+        DataService.sentiment_post_analysis(d)
+          .then(function(d){
+            $scope.sentiment_post_data = d.data.list
+            console.log($scope.sentiment_post_data)
+            $scope.counter = $scope.counter + 1
+          })
+      }
+
+
       $scope.topic = {}
       $scope.topic.KeyWord = ' '
       $scope.topic.CommentFilter = 'nograles,bam,tolentino,roque,poe,angara,villar,ejercito,cayetano,bong,uson,manicad,aguilar,binay,duterte,pimentel,tulfo,dela Rosa,estrada,andanar,lapid,imee'

@@ -84,6 +84,22 @@ angular.module('Friso.services')
       return d.promise;
     }
 
+    this.sentiment_post_analysis = function(data) {
+      var d = $q.defer();
+      $http({
+        method: 'POST',
+        url: 'http://laraveltestproject.herokuapp.com/api/post_list_stat',
+        headers: {
+        'Content-Type': 'application/json'},
+        data: data
+
+      }).then(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
     this.post_analysis = function(data) {
       console.log(data)
       var d = $q.defer();
