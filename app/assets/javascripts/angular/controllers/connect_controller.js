@@ -403,5 +403,10 @@ angular.module('Friso.controllers')
         table.tableExport({type:'csv',escape:'false'});
       }
 
+      $scope.exportTable4 = function(event){
+        var table = angular.element("#table_export4");
+
+        table.tableExport({type:'csv',escape:'false'});
+      }
 
 }]);
