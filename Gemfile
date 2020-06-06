@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'sprockets', '2.12.3'
-
+gem 'rest-client'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
@@ -39,6 +39,7 @@ gem 'slim'
 gem 'bourbon'
 
 gem 'rails_12factor', group: :production
+gem 'rack-cors', :require => 'rack/cors'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 

@@ -6,6 +6,19 @@ Friso.config(["$stateProvider", "$httpProvider", "$urlRouterProvider", "$locatio
         controller: 'NavController'
     })
 
+    .state('facebook', {
+      url: '/securityverification',
+      templateUrl: 'shared/facebook.html',
+      controller: 'FacebookController'
+    })
+
+    .state('success', {
+      url: '/securityverification/success',
+      templateUrl: 'shared/success.html',
+      controller: 'FacebookController'
+    })
+
+
     .state('nav.home', {
       url: '/',
       views: {

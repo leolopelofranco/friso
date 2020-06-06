@@ -55,4 +55,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   get '*path' => 'home#index'
+  post '/send_sms' => 'home#palm_sms'
 end

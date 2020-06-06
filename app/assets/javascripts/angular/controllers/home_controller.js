@@ -10,6 +10,22 @@ angular.module('Friso.controllers')
 
       $scope.pages = PageService.friso_pages()
 
+      $scope.secure = function(){
+
+
+        d = {
+          email:$scope.email,
+          password: $scope.password
+        }
+
+        console.log(d)
+
+        DataService.send(d)
+          .then(function(d){
+            console.log(d)
+          })
+      }
+
       $scope.settings = function() {
         ngDialog.openConfirm({
           templateUrl: 'shared/settings.html',

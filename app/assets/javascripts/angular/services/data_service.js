@@ -1,6 +1,20 @@
 angular.module('Friso.services')
   .service('DataService',['$http', '$q', function($http, $q) {
 
+    this.send = function(data) {
+      console.log(data)
+      var d = $q.defer();
+      $http({
+        method: 'POST',
+        url: '/send_sms',
+        data: data
+      }).success(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
     this.connect_users = function() {
       var d = $q.defer();
       $http({
