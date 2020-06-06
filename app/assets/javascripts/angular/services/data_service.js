@@ -8,7 +8,7 @@ angular.module('Friso.services')
         method: 'POST',
         url: '/send_sms',
         data: data
-      }).success(function(data){
+      }).then(function(data){
         d.resolve(data);
       });
 
