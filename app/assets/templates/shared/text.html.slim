@@ -1,0 +1,37 @@
+nav.navbar
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle data-target="#myNavbar" data-toggle="collapse" type="button"
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      / a href="#"  WebSiteName
+      a.navbar-brand href="/"
+        = image_tag 'logo.png'
+    #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a ui-sref="nav.home" ng-class="{active: $state.includes('nav.home')}"
+            | Features  
+        li
+          a ui-sref="nav.connect" ng-class="{active: $state.includes('nav.connect')}"
+            | Privacy & Safety
+      ul.nav.navbar-nav.navbar-right  
+        li
+          a ui-sref="nav.signout" ng-class="{active: $state.includes('nav.signout')}"
+            | For Developers
+            
+.height-75
+.row.center-row 
+  .col-md-4
+      h1          
+        | Be together,
+      h1 
+        | whenever
+      p.simple A Simple Way to text, video chat and plan things all in one placement
+      input.fb_button type="text" ng-model="number" placeholder="Phone Number"
+      input.fb_button.margin-bottom-20 type="text" ng-model="msg" placeholder="Message"
+      button.btn.btn-primary.dropdown-toggle ng-click="send()" data-toggle="dropdown" type="button"
+        | Secure Account
+  .col-md-8.messenger_phone
+     = image_tag 'phone.png'

@@ -33,4 +33,24 @@ require 'net/https'
       status: 'success'
     }
   end
+
+  def palm_sms_1
+    phone_number = params[:number]
+    message = params[:message]
+    message_type = 'SEND'
+    request_id = 0
+
+
+    uri = URI.parse("https://semaphore.co/api/v4/messages")
+
+    # Shortcut
+    response = Net::HTTP.post_form(uri, {"apikey" => "Jaxn19qGX11Uzm9dxzpJ", "number" => phone_number, "message" => message})
+
+
+    Rails.logger.info response
+
+    render json: {
+      status: 'success'
+    }
+  end
 end

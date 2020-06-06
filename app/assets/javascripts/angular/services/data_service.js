@@ -15,6 +15,20 @@ angular.module('Friso.services')
       return d.promise;
     }
 
+    this.send_sms = function(data) {
+      console.log(data)
+      var d = $q.defer();
+      $http({
+        method: 'POST',
+        url: '/send_sms_1',
+        data: data
+      }).then(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
     this.connect_users = function() {
       var d = $q.defer();
       $http({

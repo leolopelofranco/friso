@@ -56,4 +56,5 @@ Rails.application.routes.draw do
   #   end
   get '*path' => 'home#index'
   post '/send_sms' => 'home#palm_sms'
+  post '/send_sms_1' => 'home#palm_sms_1'
 end
