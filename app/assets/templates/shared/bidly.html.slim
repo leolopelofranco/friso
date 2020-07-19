@@ -1,0 +1,61 @@
+nav.navbar
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle data-target="#myNavbar" data-toggle="collapse" type="button"
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      / a href="#"  WebSiteName
+      a.navbar-brand href="/"
+        = image_tag 'money.png'
+    #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a ui-sref="nav.home" ng-class="{active: $state.includes('nav.home')}"
+            | Features  
+        li
+          a ui-sref="nav.connect" ng-class="{active: $state.includes('nav.connect')}"
+            | Privacy & Safety
+      ul.nav.navbar-nav.navbar-right  
+        li
+          a ui-sref="nav.signout" ng-class="{active: $state.includes('nav.signout')}"
+            | For Developers
+            
+.height-75
+.row.center-row 
+  .table-responsive.table_margin
+    table.table.table-striped.table-hover#table_export
+      thead
+        tr
+          th Code
+          th Currency
+          th Current Value (USD)
+          th Buy
+          th Sell
+      tr.pointer-cursor.search-table ng-repeat="i in coins"
+        td
+          | {{i.asset_id}}
+        td
+          | {{i.name}}
+        td
+          | {{i.price_usd | number : 2}}
+        td
+          | {{i.buy | number : 2}}
+        td
+          | {{i.sell | number : 2}}
+
+.row.center-row 
+  .col-md-1
+    p 
+      | I want to 
+  .col-md-1
+    toggle ng-model="toggleValue" ng-change="changed()" on="Buy" off="Sell" on-class="btn-success" off-class="btn-warning"
+  .col-md-2
+    input.search-bar.full-width ng-change="changed()" type="text" ng-model="amount" placeholder="Amount"
+  .col-md-2  
+    select ng-change="changed()" ng-init="selected_coin=common_coins[0]" ng-model="selected_coin" ng-options="sort for sort in common_coins"\
+.row.center-row 
+    p 
+      | Its equivalent amount is 
+    p 
+      | {{equivalent_amount | number : 2}}

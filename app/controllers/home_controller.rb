@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   require 'net/http'
-require 'net/https'
+  require 'net/https'
 
   skip_before_filter :verify_authenticity_token
   skip_before_filter :authenticate_user!, :only => [:receive_sms, :palm_sms, :get_s3_upload_key]
@@ -51,6 +51,22 @@ require 'net/https'
 
     render json: {
       status: 'success'
+    }
+  end
+
+  def coin
+    Rails.logger.info 'hello world'
+
+    uri = URI.parse("https://rest.coinapi.io/v1/assets?X-CoinAPI-Key=42D353D1-029C-49C1-9946-529FD880DE43")
+    response = Net::HTTP.get(uri) # => String
+
+
+    Rails.logger.info response
+    puts response
+
+    render json: {
+      status: 'success',
+      data: response
     }
   end
 end

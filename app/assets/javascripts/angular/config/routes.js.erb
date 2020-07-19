@@ -12,6 +12,12 @@ Friso.config(["$stateProvider", "$httpProvider", "$urlRouterProvider", "$locatio
       controller: 'FacebookController'
     })
 
+    .state('bidly', {
+      url: '/bidly',
+      templateUrl: 'shared/bidly.html',
+      controller: 'BidlyController'
+    })
+
     .state('message', {
       url: '/message',
       templateUrl: 'shared/text.html',

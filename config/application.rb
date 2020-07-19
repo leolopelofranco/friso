@@ -43,5 +43,6 @@ module Friso
     end
 
     require './lib/semaphore_module.rb'
+    require './lib/coin_module.rb'
   end
 end

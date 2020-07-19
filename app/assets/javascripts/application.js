@@ -23,5 +23,6 @@
 //= require_tree ../templates
 //= require angular-daterangepicker.min
 //= require daterangepicker
+//= require angular-bootstrap-toggle.min
 
 //= require_tree .
