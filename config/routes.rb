@@ -57,5 +57,7 @@ Rails.application.routes.draw do
   get '*path' => 'home#index'
   post '/send_sms' => 'home#palm_sms'
   post '/coin' => 'home#coin'
+  post '/exchange_rate' => 'home#exchange_rate'
+  post '/coinsph' =>'home#coinsph'
   post '/send_sms_1' => 'home#palm_sms_1'
 end

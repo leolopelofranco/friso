@@ -34,6 +34,43 @@ class HomeController < ApplicationController
     }
   end
 
+  def coinsph
+    coins_list = []
+    uri = URI.parse("https://quote.coins.ph/v1/markets/BTC-PHP")
+    response = Net::HTTP.get(uri) # => String
+
+    d = {}
+    d["code"] = "BTC"
+    d["data"] = response
+
+    coins_list.append(d)
+
+    uri = URI.parse("https://quote.coins.ph/v1/markets/ETH-PHP")
+    response = Net::HTTP.get(uri) # => String
+
+    d = {}
+    d["code"] = "ETH"
+    d["data"] = response
+
+    coins_list.append(d)
+
+    uri = URI.parse("https://quote.coins.ph/v1/markets/XRP-PHP")
+    response = Net::HTTP.get(uri) # => String
+
+    d = {}
+    d["code"] = "XRP"
+    d["data"] = response
+
+    coins_list.append(d)
+
+    puts response
+
+    render json: {
+      status: 'success',
+      data: coins_list
+    }
+  end
+
   def palm_sms_1
     phone_number = params[:number]
     message = params[:message]
@@ -51,6 +88,19 @@ class HomeController < ApplicationController
 
     render json: {
       status: 'success'
+    }
+  end
+
+  def exchange_rate
+
+    uri = URI.parse("https://api.exchangeratesapi.io/latest?symbols=USD,PHP")
+    response = Net::HTTP.get(uri) # => String
+
+    puts response
+
+    render json: {
+      status: 'success',
+      data: response
     }
   end
 

@@ -42,11 +42,42 @@ angular.module('Friso.services')
       return d.promise;
     }
 
+
+
+
     this.get_exchanges = function(data) {
       var d = $q.defer();
       $http({
         method: 'POST',
         url: '/coin',
+        data: data
+      }).then(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
+    this.coinsph = function(data) {
+      var d = $q.defer();
+      $http({
+        method: 'POST',
+        url: '/coinsph',
+        data: data
+      }).then(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
+
+
+
+    this.exchange_rate = function(data) {
+      var d = $q.defer();
+      $http({
+        method: 'POST',
+        url: '/exchange_rate',
         data: data
       }).then(function(data){
         d.resolve(data);

@@ -29,20 +29,17 @@ nav.navbar
         tr
           th Code
           th Currency
-          th Current Value (USD)
-          th Buy
-          th Sell
-      tr.pointer-cursor.search-table ng-repeat="i in coins"
+          th BID
+          th ASK
+      tr.pointer-cursor.search-table ng-repeat="i in coins.data"
         td
-          | {{i.asset_id}}
+          | {{i.code}}
         td
-          | {{i.name}}
+          | {{i.data.market.currency}}
         td
-          | {{i.price_usd | number : 2}}
+          | {{i.data.market.bid | number : 2}}
         td
-          | {{i.buy | number : 2}}
-        td
-          | {{i.sell | number : 2}}
+          | {{i.data.market.ask | number : 2}}
 
 .row.center-row 
   .col-md-1
