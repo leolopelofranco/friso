@@ -63,6 +63,22 @@ class HomeController < ApplicationController
 
     coins_list.append(d)
 
+    uri = URI.parse("https://quote.coins.ph/v1/markets/LTC-PHP")
+    response = Net::HTTP.get(uri) # => String
+
+    d = {}
+    d["code"] = "LTC"
+    d["data"] = response
+
+    uri = URI.parse("https://quote.coins.ph/v1/markets/BCH-PHP")
+    response = Net::HTTP.get(uri) # => String
+
+    d = {}
+    d["code"] = "BCH"
+    d["data"] = response
+
+    coins_list.append(d)
+
     puts response
 
     render json: {

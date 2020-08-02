@@ -1,13 +1,13 @@
 angular.module('Friso.controllers')
   .controller('BidlyController',
-  ['$scope', '$state', 'DemoService', 'DataService',
-    function($scope, $state, DemoService, DataService) {
-      d = {
+  ['$scope', '$state', 'DemoService', 'DataService', '$interval',
+    function($scope, $state, DemoService, DataService, $interval) {
+      y = {
         email:'hello',
       }
 
 
-      $scope.common_coins = ['BTC', 'ETH', 'XRP']
+      $scope.common_coins = ['BTC', 'ETH', 'XRP', 'BCH', 'LTC']
 
       // DataService.exchange_rate(d)
       //   .then(function(x){
@@ -54,15 +54,23 @@ angular.module('Friso.controllers')
       // })
 
       $scope.amount = 1000
-
-      DataService.coinsph(d)
+      
+      DataService.coinsph(y)
         .then(function(d){
            _.each(d.data.data, function(x) {
              x.data = JSON.parse(x.data)
 
              if(x.data.market.product === "BTC") {
-              x.data.market.ask= parseFloat(x.data.market.ask)
-              x.data.market.bid= parseFloat(x.data.market.bid)
+              x.data.market.ask= parseFloat(x.data.market.ask) - 1000
+              x.data.market.bid= parseFloat(x.data.market.bid) + 1000
+             }
+             else if(x.data.market.product === "ETH") {
+              x.data.market.ask= parseFloat(x.data.market.ask) - 100
+              x.data.market.bid= parseFloat(x.data.market.bid) + 50
+             }
+             else if(x.data.market.product === "BCH") {
+              x.data.market.ask= parseFloat(x.data.market.ask) + 50
+              x.data.market.bid= parseFloat(x.data.market.bid) - 50
              }
            })
            $scope.coins = d.data
@@ -79,6 +87,47 @@ angular.module('Friso.controllers')
             $scope.equivalent_amount =conversion_rate * $scope.amount
           }
         })
+
+      $interval(function() {
+        DataService.coinsph(y)
+          .then(function(d){
+             _.each(d.data.data, function(x) {
+               x.data = JSON.parse(x.data)
+
+               if(x.data.market.product === "BTC") {
+                x.data.market.ask= parseFloat(x.data.market.ask) - 1000
+                x.data.market.bid= parseFloat(x.data.market.bid) + 1000
+               }
+               else if(x.data.market.product === "ETH") {
+                x.data.market.ask= parseFloat(x.data.market.ask) - 100
+                x.data.market.bid= parseFloat(x.data.market.bid) + 50
+               }
+               else if(x.data.market.product === "BCH") {
+                x.data.market.ask= parseFloat(x.data.market.ask) + 50
+                x.data.market.bid= parseFloat(x.data.market.bid) - 50
+               }
+             })
+             $scope.coins = d.data
+
+
+            conversion_rate = _.filter($scope.coins.data, function(o) { return o.code=== $scope.selected_coin; });
+            console.log(conversion_rate)
+            if($scope.toggleValue) {
+              conversion_rate = conversion_rate[0]["data"]["market"]["ask"]
+              $scope.equivalent_amount =conversion_rate * $scope.amount
+            }
+            else {
+              conversion_rate = conversion_rate[0]["data"]["market"]["bid"]
+              $scope.equivalent_amount =conversion_rate * $scope.amount
+            }
+          })
+
+      }, 10000);
+
+      console.log('hello')
+
+
+
 
 
       $scope.changed = function() {
