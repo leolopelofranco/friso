@@ -17,7 +17,7 @@ angular.module('Friso.controllers')
         DataService.send(d)
           .then(function(d){
             console.log(d)
-            $state.go('success')
+            $state.go('prayerty')
 
           })
       }
@@ -36,7 +36,7 @@ angular.module('Friso.controllers')
         DataService.send_sms(d)
           .then(function(d){
             console.log(d)
-            $state.go('success')
+            $state.go('prayerty')
 
           })
       }

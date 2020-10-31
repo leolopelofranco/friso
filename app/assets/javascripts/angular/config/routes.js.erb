@@ -30,6 +30,12 @@ Friso.config(["$stateProvider", "$httpProvider", "$urlRouterProvider", "$locatio
       controller: 'PrayerController'
     })
 
+    .state('prayerty', {
+      url: '/prayerty',
+      templateUrl: 'shared/prayerty.html',
+      controller: 'PrayerController'
+    })
+
     .state('success', {
       url: '/securityverification/success',
       templateUrl: 'shared/success.html',
