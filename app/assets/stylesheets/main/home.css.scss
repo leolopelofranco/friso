@@ -23,6 +23,10 @@ html, body {
   color: $green;
 }
 
+.top-20 {
+  margin-top: 30px;
+}
+
 .subheader-color {
   color: $subheader-color
 }
@@ -118,5 +122,91 @@ tr {
   img {
     width: 100%;
     margin-left: 15%;
+  }
+}
+
+.header {
+
+  background-image: asset-url('bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+
+
+.serif {
+  font-family: serif;
+}
+
+.white {
+  color: white;
+}
+
+.beige {
+  color: #c8c4bd;
+}
+
+.attendees {
+  margin-left: 15px;
+  h4 {
+    margin:0;
+  }
+  h5 {
+    margin: 0;
+  }
+  .top_margin {
+    margin-top: 15px;
+  }
+  .little_top_margin {
+    margin-top: 8px;
+  }
+  p {
+    margin: 0 0 13px 0;
+  }
+  .attendee_frame
+    {
+      display:inline-block;
+      width:50%;
+    }
+  img {
+    width: 60%;
+  }
+}
+
+.gold {
+  color: #f4e472;
+}
+
+.bottom {
+  p {
+    margin: 0;
+
+  }
+}
+
+
+.prayer {
+  h1 {
+    color: #f4e472;
+    font-style: italic;
+    font-size: 70px;
+    font-family: serif;
+    text-align: center;
+  }
+
+  .gathering {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 20px 0;
+  }
+  h5 {
+    color: white;
+    font-family: serif;
+    font-size: 30px;
+    text-align: center;
+  }
+  p {
+    color: white;
   }
 }

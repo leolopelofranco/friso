@@ -9,28 +9,35 @@
     asset-url("streamline-30px.svg#streamline-30px") format("svg");
   font-weight: normal;
   font-style: normal;
-
 }
 
+.align-center {
+  text-align: center;
+}
+
+.loved {
+  margin-left: 5px;
+}
 .fb_button {
-  background: rgba(0, 0, 0, .04);
+
   border: none;
   border-radius: 10px;
   box-sizing: border-box;
   color: rgba(0, 0, 0, 1);
-  display: block;
+  margin-right: 15px;
+  margin-top: 10px;
   font-family: Calibre, Helvetica Neue, Segoe UI, Helvetica, Arial, Lucida Grande, sans-serif;
   font-size: 19px;
   height: 36px;
   margin-bottom: 12px;
   padding: 8px 16px;
-  width: 320px;
+
 }
 
 .center-row {
   padding: 35px 0 0;
   margin: 0 auto;
-  max-width: 1020px;
+  
 }
 
 .male:before {

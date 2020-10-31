@@ -1,0 +1,68 @@
+.header
+  .row.center-row 
+    .col-md-8.prayer
+      h1.serif       
+        | Let us come together in Prayer
+      p.gathering
+        | An Online Prayer Gathering
+      h5.serif       
+        | Let us Pray for the 
+        span.gold 
+          | Victims of Covid-19, 
+        | safety of 
+        span.gold 
+          | frontliners
+        |  and
+        span.gold.loved 
+          | Loved Ones. 
+      .align-center.top-20
+        input.fb_button type="text" ng-model="name" placeholder="Name"
+        input.fb_button.margin-bottom-20 type="text" ng-model="mobile" placeholder="Mobile"
+      
+      .align-center
+        button.btn.btn-primary.dropdown-toggle ng-click="secure()" data-toggle="dropdown" type="button"
+           | Submit
+    .col-md-4
+      .attendees
+        h4.gold
+          | 02 NOV 2020
+        h4.gold
+          | 3:00 PM
+        h4.white 
+          | Watch FB Live at:
+        h4.gold.little_top_margin
+          | facebook.com/hontiveros  
+        p.gold.top_margin
+          | Attendees:
+        .attendee_frame
+          = image_tag 'srh.png'
+          p.beige
+            | Sen. Risa Hontiveros
+        .attendee_frame
+          = image_tag 'pabillo.png'
+          p.beige
+            | Bishop Pabillo
+        .attendee_frame
+          = image_tag 'd.png'
+          p.beige 
+            | Bishop Iniguez
+        .attendee_frame
+          = image_tag 'david.png'
+          p.beige 
+            | Bishop David
+        .attendee_frame
+          = image_tag 'luisitro.png'
+          p.beige 
+            | Br. Armin Luisitro
+        .attendee_frame
+          = image_tag 'AMRSP.png'
+          p.beige 
+            | AMRSP - Women Commission
+  .bottom
+    p.white 
+      | You will receive an SMS alert an hour before the event.
+    
+    
+    
+        
+          
